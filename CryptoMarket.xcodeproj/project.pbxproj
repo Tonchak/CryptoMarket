@@ -82,6 +82,17 @@
 			path = CoinAPIManager;
 			sourceTree = "<group>";
 		};
+		56126DFA27FCCFB600DB0E26 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				5628F2A027F6345A009EA147 /* CurrencyItem.swift */,
+				56038B5627FB31A800F74B78 /* CurrencyResponse.swift */,
+				56038B5827FC1B3400F74B78 /* Platform.swift */,
+				56038B5A27FC6A9D00F74B78 /* ListingLatest.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		5628F26D27F5BF2F009EA147 = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +114,8 @@
 		5628F27827F5BF2F009EA147 /* CryptoMarket */ = {
 			isa = PBXGroup;
 			children = (
-				5628F2A027F6345A009EA147 /* CurrencyItem.swift */,
-				56038B5627FB31A800F74B78 /* CurrencyResponse.swift */,
-				56038B5827FC1B3400F74B78 /* Platform.swift */,
-				56038B5A27FC6A9D00F74B78 /* ListingLatest.swift */,
 				56038B4927FAD7E000F74B78 /* Managers */,
+				56126DFA27FCCFB600DB0E26 /* Structures */,
 				5628F29327F615A4009EA147 /* Scenes */,
 				5628F29127F5BFEF009EA147 /* Resources */,
 				5628F29027F5BFE5009EA147 /* Assets */,
