@@ -30,7 +30,7 @@ struct ListingLatest: Decodable {
     
     enum Property: Decodable {
         case name
-        case code
+        case symbol
     }
     
 }
@@ -43,7 +43,7 @@ extension ListingLatest.Property: RawRepresentable {
     init?(rawValue: String) {
         switch rawValue {
         case "Name": self = .name
-        case "Code": self = .code
+        case "Code": self = .symbol
         default: return nil
         }
     }
@@ -51,7 +51,7 @@ extension ListingLatest.Property: RawRepresentable {
     var rawValue: String {
         switch self {
         case .name: return "Name"
-        case .code: return "Code"
+        case .symbol: return "Code"
         }
     }
     

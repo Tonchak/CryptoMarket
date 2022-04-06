@@ -9,7 +9,6 @@ import Foundation
 
 public struct CurrencyResponse: Decodable {
     let status: Status?
-    //var data: Array<Currency>?
     var data: Array<ListingLatest>?
 }
 

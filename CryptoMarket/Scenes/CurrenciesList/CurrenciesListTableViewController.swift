@@ -18,6 +18,8 @@ class CurrenciesListTableViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         
+        self.title = "Currencies"
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "CurrencyItemTableViewCell", bundle: nil), forCellReuseIdentifier: NSStringFromClass(CurrencyItemTableViewCell.self))
         
@@ -99,13 +101,20 @@ class CurrenciesListTableViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let controller = CurrencyDetailViewController.init(nibName: "CurrencyDetailViewController", bundle: nil)
+        controller.dataSource = items[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Actions
     
     @objc func refreshCurrencies()  {
-        self.refreshControl!.endRefreshing()
+        MarketAPIManager.shared.fetchList { items in
+            self.refreshControl!.endRefreshing()
+            self.items = items
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -120,8 +129,11 @@ extension CurrenciesListTableViewController: UISearchResultsUpdating {
     }
 }
 
+// MARK: - UISearchBarDelegate
+
 extension CurrenciesListTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
     }
 }
+

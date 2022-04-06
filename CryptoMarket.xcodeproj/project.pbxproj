@@ -12,6 +12,8 @@
 		56038B5727FB31A800F74B78 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B5627FB31A800F74B78 /* CurrencyResponse.swift */; };
 		56038B5927FC1B3400F74B78 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B5827FC1B3400F74B78 /* Platform.swift */; };
 		56038B5B27FC6A9D00F74B78 /* ListingLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B5A27FC6A9D00F74B78 /* ListingLatest.swift */; };
+		56126DFE27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56126DFC27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift */; };
+		56126DFF27FCD9EB00DB0E26 /* CurrencyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56126DFD27FCD9EB00DB0E26 /* CurrencyDetailViewController.xib */; };
 		5628F27A27F5BF2F009EA147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5628F27927F5BF2F009EA147 /* AppDelegate.swift */; };
 		5628F27C27F5BF2F009EA147 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5628F27B27F5BF2F009EA147 /* SceneDelegate.swift */; };
 		5628F27E27F5BF2F009EA147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5628F27D27F5BF2F009EA147 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		56038B5627FB31A800F74B78 /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
 		56038B5827FC1B3400F74B78 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		56038B5A27FC6A9D00F74B78 /* ListingLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingLatest.swift; sourceTree = "<group>"; };
+		56126DFC27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailViewController.swift; sourceTree = "<group>"; };
+		56126DFD27FCD9EB00DB0E26 /* CurrencyDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyDetailViewController.xib; sourceTree = "<group>"; };
 		5628F27627F5BF2F009EA147 /* CryptoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5628F27927F5BF2F009EA147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5628F27B27F5BF2F009EA147 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 				56038B5A27FC6A9D00F74B78 /* ListingLatest.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		56126DFB27FCD1DB00DB0E26 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				56126DFC27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift */,
+				56126DFD27FCD9EB00DB0E26 /* CurrencyDetailViewController.xib */,
+			);
+			path = DetailScreen;
 			sourceTree = "<group>";
 		};
 		5628F26D27F5BF2F009EA147 = {
@@ -156,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5628F29427F6167D009EA147 /* CurrenciesList */,
+				56126DFB27FCD1DB00DB0E26 /* DetailScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56126DFF27FCD9EB00DB0E26 /* CurrencyDetailViewController.xib in Resources */,
 				5628F28927F5BF31009EA147 /* LaunchScreen.storyboard in Resources */,
 				5628F29927F618FA009EA147 /* CurrencyItemTableViewCell.xib in Resources */,
 				5628F28627F5BF31009EA147 /* Assets.xcassets in Resources */,
@@ -304,6 +319,7 @@
 			files = (
 				56038B5927FC1B3400F74B78 /* Platform.swift in Sources */,
 				56038B5727FB31A800F74B78 /* CurrencyResponse.swift in Sources */,
+				56126DFE27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift in Sources */,
 				56038B5B27FC6A9D00F74B78 /* ListingLatest.swift in Sources */,
 				5628F29B27F61A49009EA147 /* CurrenciesListTableViewController.swift in Sources */,
 				5628F27E27F5BF2F009EA147 /* ViewController.swift in Sources */,
