@@ -14,6 +14,7 @@ class CurrencyItemTableViewCell: UITableViewCell {
     @IBOutlet weak var exchangeRateLabel: UILabel!
     
     private var dataSource: ListingLatest?
+    private var _dataModel: CMTableViewCellDataModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,16 +27,16 @@ class CurrencyItemTableViewCell: UITableViewCell {
 }
 
 extension CurrencyItemTableViewCell {
-    var currencyItem: ListingLatest? {
+    var dataModel: CMTableViewCellDataModel? {
         get {
-            return dataSource
+            return _dataModel
         }
         set (newValue) {
-            dataSource = newValue
-            currencyCodeLabel.text = dataSource?.symbol
-            currencyNameLabel.text = dataSource?.name
-            let rateDouble: Double = dataSource?.quote?.USD?.price ?? 0
-            exchangeRateLabel.text = String(format: "%f", rateDouble)
+            _dataModel = newValue
+            currencyCodeLabel.text = _dataModel?.code
+            currencyNameLabel.text = _dataModel?.name
+            exchangeRateLabel.text = _dataModel?.rateText
         }
     }
 }
+

@@ -24,7 +24,7 @@ struct ListingLatest: Decodable {
     let self_reported_circulating_supply: Double?
     let self_reported_market_cap: Double?
     let last_updated: String?
-    let quote: Quote?//Dictionary<String, USD>?
+    let quote: Quote?
     
     let property: Property?
     
@@ -58,7 +58,6 @@ extension ListingLatest.Property: RawRepresentable {
 }
 
 struct Quote: Decodable {
-    //let USD: Dictionary<String, USD>?
     let USD: USD?
 }
 

@@ -25,6 +25,7 @@
 		56D7758F27FE2FC30085A692 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7758D27FE2FC30085A692 /* Currency+CoreDataClass.swift */; };
 		56D7759027FE2FC30085A692 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7758E27FE2FC30085A692 /* Currency+CoreDataProperties.swift */; };
 		56D7759527FE3A950085A692 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7759427FE3A950085A692 /* DatabaseHandler.swift */; };
+		56D7759E27FEEEBD0085A692 /* CMTableViewCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7759D27FEEEBD0085A692 /* CMTableViewCellDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		56D7758D27FE2FC30085A692 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		56D7758E27FE2FC30085A692 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		56D7759427FE3A950085A692 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		56D7759D27FEEEBD0085A692 /* CMTableViewCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTableViewCellDataModel.swift; sourceTree = "<group>"; };
 		DF7061BCAA63BE1E39B2DB5C /* Pods-CryptoMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		FF1F48A1FD5D18B27287AB43 /* Pods-CryptoMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			children = (
 				56038B4927FAD7E000F74B78 /* Managers */,
 				56126DFA27FCCFB600DB0E26 /* Structures */,
+				56D7759C27FEED830085A692 /* Models */,
 				5628F29327F615A4009EA147 /* Scenes */,
 				5628F29127F5BFEF009EA147 /* Resources */,
 				56D7758C27FE2F990085A692 /* Database */,
@@ -203,6 +206,14 @@
 				5628F28227F5BF2F009EA147 /* CryptoMarket.xcdatamodeld */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		56D7759C27FEED830085A692 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56D7759D27FEEEBD0085A692 /* CMTableViewCellDataModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E97C75B1BBE5284250634296 /* Pods */ = {
@@ -337,6 +348,7 @@
 				56D7758F27FE2FC30085A692 /* Currency+CoreDataClass.swift in Sources */,
 				56126DFE27FCD9EB00DB0E26 /* CurrencyDetailViewController.swift in Sources */,
 				56038B5B27FC6A9D00F74B78 /* ListingLatest.swift in Sources */,
+				56D7759E27FEEEBD0085A692 /* CMTableViewCellDataModel.swift in Sources */,
 				5628F29B27F61A49009EA147 /* CurrenciesListTableViewController.swift in Sources */,
 				56038B5027FAF58400F74B78 /* MarketAPIManager.swift in Sources */,
 				5628F27A27F5BF2F009EA147 /* AppDelegate.swift in Sources */,

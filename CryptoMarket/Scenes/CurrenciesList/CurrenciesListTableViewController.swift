@@ -66,7 +66,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
                     print("\(fetchError), \(fetchError.localizedDescription)")
                 }
                 
-                self.tableView.reloadData()
             }
         }
         
@@ -79,7 +78,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
                 Swift.print(fetchError)
             }
             
-            self.tableView.reloadData()
         }
         
     }
@@ -130,9 +128,13 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: CurrencyItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CurrencyItemTableViewCell.self), for: indexPath) as! CurrencyItemTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CurrencyItemTableViewCell.self), for: indexPath) as? CurrencyItemTableViewCell else {
+            fatalError("Unexpected Index Path")
+        }
         
-        //cell.currencyItem = items[indexPath.row]
+        let item: Currency = fetchedResultsController.object(at: indexPath)
+        let model: CMTableViewCellDataModel = CMTableViewCellDataModel.initWith(entity: item)
+        cell.dataModel = model
         
         return cell
     }
