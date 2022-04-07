@@ -20,7 +20,7 @@ extension Currency {
     @NSManaged public var name: String?
     @NSManaged public var symbol: String?
     @NSManaged public var slug: String?
-    @NSManaged public var maxSupply: Int16
+    @NSManaged public var maxSupply: String?
     @NSManaged public var totalSupply: Double
     @NSManaged public var fullyDilutedMarketCap: Double
     @NSManaged public var price: Double

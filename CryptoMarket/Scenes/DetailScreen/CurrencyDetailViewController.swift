@@ -10,6 +10,7 @@ import UIKit
 class CurrencyDetailViewController: UIViewController {
     
     var dataSource: ListingLatest?
+    var dataModel: CMTableViewCellDataModel?
     
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
@@ -23,16 +24,14 @@ class CurrencyDetailViewController: UIViewController {
         
         self.title = dataSource?.symbol
         
-        mainTitleLabel.text = dataSource?.name
+        mainTitleLabel.text = dataModel?.name
         
-        let rateDouble: Double = dataSource?.quote?.USD?.price ?? 0
-        let totalCoins: Double = dataSource?.total_supply ?? 0
-        let maxCoins: Int = dataSource?.max_supply ?? 0
-        let totalCapitalization: Double = dataSource?.quote?.USD?.fully_diluted_market_cap ?? 0
+        let totalCoins: Double = dataModel?.totalSupply ?? 0
+        let totalCapitalization: Double = dataModel?.totalMarketCap ?? 0
         
-        rateLabel.text = String(format: "%f", rateDouble)
+        rateLabel.text = dataModel?.rateText
         availableCoinsLabel.text = String(format: "%f", totalCoins)
-        maxAvailabelCoinsLabel.text = String(format: "%d", maxCoins)
+        maxAvailabelCoinsLabel.text = dataModel?.maxSupplyText
         totalMarketCapitalizationLabel.text = String(format: "%f", totalCapitalization)
         
     }

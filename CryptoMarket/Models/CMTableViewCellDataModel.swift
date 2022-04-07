@@ -16,12 +16,15 @@ class CMTableViewCellDataModel: NSObject {
     var rate: Double?
     var rateText: String?
     
+    var totalSupply: Double?
+    var maxSupplyText: String?
+    var totalMarketCap: Double?
+    
     // MARK: - Init
     
     class func initWith(entity: Currency) -> CMTableViewCellDataModel {
         let model: CMTableViewCellDataModel = CMTableViewCellDataModel()
         
-        model.currencyEntity = entity
         model.code = entity.symbol
         model.name = entity.name
         model.rate = entity.price
@@ -30,4 +33,18 @@ class CMTableViewCellDataModel: NSObject {
         return model
     }
     
+    class func dataModelWith(entity: Currency) -> CMTableViewCellDataModel {
+        
+        let model: CMTableViewCellDataModel = CMTableViewCellDataModel()
+        
+        model.code = entity.symbol
+        model.name = entity.name
+        model.rate = entity.price
+        model.rateText = String(format: "%f", entity.price)
+        model.totalSupply = entity.totalSupply
+        model.maxSupplyText = entity.maxSupply
+        model.totalMarketCap = entity.fullyDilutedMarketCap
+        
+        return model
+    }
 }

@@ -69,16 +69,7 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
             }
         }
         
-        DatabaseHandler.shared.fetchCurrenciesList { error in
-            
-            do {
-                try self.fetchedResultsController.performFetch()
-            } catch {
-                let fetchError = error as NSError
-                Swift.print(fetchError)
-            }
-            
-        }
+        DatabaseHandler.shared.fetchCurrenciesList()
         
     }
     
@@ -133,8 +124,7 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         }
         
         let item: Currency = fetchedResultsController.object(at: indexPath)
-        let model: CMTableViewCellDataModel = CMTableViewCellDataModel.initWith(entity: item)
-        cell.dataModel = model
+        cell.dataModel = CMTableViewCellDataModel.initWith(entity: item)
         
         return cell
     }
@@ -145,9 +135,8 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         tableView.deselectRow(at: indexPath, animated: true)
         let controller = CurrencyDetailViewController.init(nibName: "CurrencyDetailViewController", bundle: nil)
         
-        if items.count > 0 {
-            controller.dataSource = items[indexPath.row]
-        }
+        let item: Currency = fetchedResultsController.object(at: indexPath)
+        controller.dataModel = CMTableViewCellDataModel.dataModelWith(entity: item)
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -205,10 +194,10 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     // MARK: - Actions
     
     @objc func refreshCurrencies()  {
-        MarketAPIManager.shared.fetchList { items in
-            self.refreshControl!.endRefreshing()
-            self.items = items
-            self.tableView.reloadData()
+        DatabaseHandler.shared.updateList {
+            DispatchQueue.main.async {
+                self.refreshControl!.endRefreshing()
+            }
         }
     }
 }
