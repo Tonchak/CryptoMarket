@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import CoreData
+import MagicalRecord
 
-class CurrenciesListTableViewController: UITableViewController {
+class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     var items: [ListingLatest] = []
     var filteredItems: [ListingLatest] = []
+    
+    var managedContext: NSManagedObjectContext?
+    private var persistentContainer = NSPersistentContainer(name: "CryptoMarket")
+    var currencies: [NSManagedObject] = []
+
     
     // MARK: - Life cycle
     
@@ -28,6 +35,7 @@ class CurrenciesListTableViewController: UITableViewController {
         self.refreshControl!.tintColor = .secondaryLabel
         self.refreshControl! .addTarget(self, action: #selector(refreshCurrencies), for: .valueChanged)
         tableView .addSubview(self.refreshControl!)
+        
     }
 
     override func viewDidLoad() {
@@ -42,8 +50,35 @@ class CurrenciesListTableViewController: UITableViewController {
         searchController.searchBar.scopeButtonTitles = ListingLatest.Property.allCases.map{$0.rawValue}
         searchController.searchBar.delegate = self
         
-        MarketAPIManager.shared.fetchList { items in
-            self.items = items
+        persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
+            
+            if let error = error {
+                
+                print("\(error), \(error.localizedDescription)")
+                
+            } else {
+                
+                do {
+                    try self.fetchedResultsController.performFetch()
+                } catch {
+                    let fetchError = error as NSError
+                    print("Unable to Perform Fetch Request")
+                    print("\(fetchError), \(fetchError.localizedDescription)")
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+        DatabaseHandler.shared.fetchCurrenciesList { error in
+            
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                Swift.print(fetchError)
+            }
+            
             self.tableView.reloadData()
         }
         
@@ -81,11 +116,15 @@ class CurrenciesListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard let currencies = fetchedResultsController.fetchedObjects else {
+            return 0
+        }
+        
         if isFiltering {
             return filteredItems.count
         }
         
-        return items.count
+        return currencies.count
     }
 
     
@@ -93,7 +132,7 @@ class CurrenciesListTableViewController: UITableViewController {
         
         let cell: CurrencyItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CurrencyItemTableViewCell.self), for: indexPath) as! CurrencyItemTableViewCell
         
-        cell.currencyItem = items[indexPath.row]
+        //cell.currencyItem = items[indexPath.row]
         
         return cell
     }
@@ -103,8 +142,62 @@ class CurrenciesListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let controller = CurrencyDetailViewController.init(nibName: "CurrencyDetailViewController", bundle: nil)
-        controller.dataSource = items[indexPath.row]
+        
+        if items.count > 0 {
+            controller.dataSource = items[indexPath.row]
+        }
+        
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Currency> = {
+        
+        let fetchRequest: NSFetchRequest<Currency> = Currency.fetchRequest()
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
+        
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: NSManagedObjectContext.mr_default(),
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        
+        fetchedResultsController.delegate = self
+        
+        return fetchedResultsController
+    }()
+    
+    // MARK: - NSFetchedResultsControllerDelegate
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: UITableView.RowAnimation.fade)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: UITableView.RowAnimation.automatic)
+        case .move: do {
+            self.tableView.deleteRows(at: [indexPath!], with: UITableView.RowAnimation.automatic)
+            self.tableView.insertRows(at: [newIndexPath!], with: UITableView.RowAnimation.fade)
+        }
+        case .update:
+            self.tableView.reloadRows(at: [indexPath!], with: UITableView.RowAnimation.automatic)
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
     }
     
     // MARK: - Actions
