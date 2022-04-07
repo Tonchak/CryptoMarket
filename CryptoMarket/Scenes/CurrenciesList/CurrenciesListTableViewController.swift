@@ -11,7 +11,10 @@ import MagicalRecord
 
 class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    var resultsController:SearchCurrenciesResultsController!
+    
+    var searchController:UISearchController!
+    
     var items: [ListingLatest] = []
     var filteredItems: [ListingLatest] = []
     
@@ -41,13 +44,15 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resultsController = SearchCurrenciesResultsController.init(style: UITableView.Style.plain)
+        
+        searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search currency"
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        searchController.searchBar.scopeButtonTitles = ListingLatest.Property.allCases.map{$0.rawValue}
         searchController.searchBar.delegate = self
         
         persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
@@ -84,18 +89,60 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
       return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
 
-    func filterContentForSearchText(_ searchText: String, property: ListingLatest.Property? = nil) {
-
-        filteredItems = items.filter { (candy: ListingLatest) -> Bool in let doesCategoryMatch = property == .name || candy.property == property
-            if isSearchBarEmpty {
-                return doesCategoryMatch
-            } else {
-                return doesCategoryMatch && candy.name.lowercased().contains(searchText.lowercased())
-            }
-      }
-
-      tableView.reloadData()
+    
+    private func filterContentForSearchText(searchText: String) {
+        
+        let strippedString: String = searchText .trimmingCharacters(in: NSCharacterSet.whitespaces)
+        var searchItems: Array<String> = []
+        if strippedString.count > 0 {
+            searchItems = strippedString .components(separatedBy: NSCharacterSet.whitespaces)
+        }
+        var andMatchPredicates: Array <NSPredicate> = []
+        
+        for text in searchItems {
+            
+            var searchItemsPredicates: Array<NSPredicate> = []
+            
+            // by name
+            let lhs = NSExpression.init(forKeyPath: "name")
+            let rhs = NSExpression.init(forConstantValue: text)
+            let fPredicate = NSComparisonPredicate.init(leftExpression: lhs, rightExpression: rhs, modifier: NSComparisonPredicate.Modifier.direct, type: NSComparisonPredicate.Operator.contains, options: NSComparisonPredicate.Options.caseInsensitive)
+            searchItemsPredicates.append(fPredicate)
+            
+            // by code
+            let lhsCode = NSExpression.init(forKeyPath: "symbol")
+            let rhsCode = NSExpression.init(forConstantValue: text)
+            let fPredicateCode = NSComparisonPredicate.init(leftExpression: lhsCode, rightExpression: rhsCode, modifier: NSComparisonPredicate.Modifier.direct, type: NSComparisonPredicate.Operator.contains, options: NSComparisonPredicate.Options.caseInsensitive)
+            searchItemsPredicates.append(fPredicateCode)
+            
+            let matchPredicates: NSCompoundPredicate = NSCompoundPredicate.init(orPredicateWithSubpredicates: searchItemsPredicates)
+            andMatchPredicates.append(matchPredicates)
+        }
+        
+        let finalCompoundPredicate: NSCompoundPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: andMatchPredicates)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init()
+        let entity: NSEntityDescription = Currency.mr_entityDescription(in: NSManagedObjectContext.mr_default())!
+        let sortDescriptors: Array<NSSortDescriptor> = [NSSortDescriptor.init(key: "name", ascending: true)]
+        
+        fetchRequest.entity = entity
+        fetchRequest.predicate = finalCompoundPredicate
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        let frc = NSFetchedResultsController.init(fetchRequest: fetchRequest, managedObjectContext: NSManagedObjectContext.mr_default(), sectionNameKeyPath: nil, cacheName: nil)
+        resultsController.searchFetchedResultsController = frc
+        resultsController.searchFetchedResultsController.delegate = resultsController
+        
+        do {
+            try resultsController.searchFetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to Perform Fetch Request")
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
+        
+        resultsController.tableView.reloadData()
     }
+    
     
     // MARK: - Table view data source
 
@@ -202,14 +249,9 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     }
 }
 
-
 extension CurrenciesListTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
-        let searchBar = searchController.searchBar
-        let property = ListingLatest.Property(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
-
-        filterContentForSearchText(searchBar.text!, property: property)
+        filterContentForSearchText(searchText: searchController.searchBar.text ?? "")
     }
 }
 

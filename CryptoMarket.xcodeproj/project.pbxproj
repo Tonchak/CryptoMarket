@@ -26,6 +26,7 @@
 		56D7759027FE2FC30085A692 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7758E27FE2FC30085A692 /* Currency+CoreDataProperties.swift */; };
 		56D7759527FE3A950085A692 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7759427FE3A950085A692 /* DatabaseHandler.swift */; };
 		56D7759E27FEEEBD0085A692 /* CMTableViewCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7759D27FEEEBD0085A692 /* CMTableViewCellDataModel.swift */; };
+		56D775A427FF79220085A692 /* SearchCurrenciesResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D775A327FF79220085A692 /* SearchCurrenciesResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		56D7758E27FE2FC30085A692 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		56D7759427FE3A950085A692 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		56D7759D27FEEEBD0085A692 /* CMTableViewCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTableViewCellDataModel.swift; sourceTree = "<group>"; };
+		56D775A327FF79220085A692 /* SearchCurrenciesResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCurrenciesResultsController.swift; sourceTree = "<group>"; };
 		DF7061BCAA63BE1E39B2DB5C /* Pods-CryptoMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		FF1F48A1FD5D18B27287AB43 /* Pods-CryptoMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 			children = (
 				5628F29527F6188E009EA147 /* TableView Cells */,
 				5628F29A27F61A49009EA147 /* CurrenciesListTableViewController.swift */,
+				56D775A327FF79220085A692 /* SearchCurrenciesResultsController.swift */,
 			);
 			path = CurrenciesList;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			files = (
 				56D7759027FE2FC30085A692 /* Currency+CoreDataProperties.swift in Sources */,
 				56D7759527FE3A950085A692 /* DatabaseHandler.swift in Sources */,
+				56D775A427FF79220085A692 /* SearchCurrenciesResultsController.swift in Sources */,
 				56038B5927FC1B3400F74B78 /* Platform.swift in Sources */,
 				56038B5727FB31A800F74B78 /* CurrencyResponse.swift in Sources */,
 				56D7758F27FE2FC30085A692 /* Currency+CoreDataClass.swift in Sources */,
