@@ -19,6 +19,15 @@ class DatabaseHandler: NSObject {
     
     static let shared: DatabaseHandler = DatabaseHandler()
     
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(checkLaunchDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     public func fetchCurrenciesList() {
         fetchListWith { items in
             self.models = items
@@ -43,6 +52,10 @@ class DatabaseHandler: NSObject {
     
     private func updateLaunchDate() {
         
+        UserDefaults.standard.set(Date(), forKey: "date.launch")
+        
+        stopTimer()
+        
         progressTime = 0
         
         timer = Timer.scheduledTimer(timeInterval: defaultTimeTick, target: self, selector: #selector(timeOutUpdate), userInfo: NSNumber.init(floatLiteral: timeoutTargetValue), repeats: true)
@@ -56,15 +69,28 @@ class DatabaseHandler: NSObject {
         
         progressTime += defaultTimeTick
         if (progress < 0 && progressTime <= timeoutTargetValue) || (progress > 0 && progressTime >= timeoutTargetValue) {
-            
-            if (timer != nil) && timer.isValid {
-                timer.invalidate()
-                timer = nil
-            }
-            
-            self.updateList {
-            }
+            updateList {}
         }
+    }
+    
+    func stopTimer() {
+        if (timer != nil) && timer.isValid {
+            timer.invalidate()
+            timer = nil
+        }
+    }
+    
+    @objc func checkLaunchDate () {
+        let started: Date = UserDefaults.standard.value(forKey: "date.launch") as! Date
+        let now = Date()
+        let diff = now.timeIntervalSince(started)
+        
+        if diff > timeoutTargetValue {
+            UserDefaults.standard.set(now, forKey: "date.launch")
+            updateList { }
+            Swift.print(diff)
+        }
+        
     }
 }
 
