@@ -26,10 +26,7 @@ class SearchCurrenciesResultsController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let count = searchFetchedResultsController.sections?.count else {
-            return 0
-        }
-        return count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

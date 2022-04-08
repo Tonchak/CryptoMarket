@@ -15,6 +15,7 @@
                 <outlet property="mainTitleLabel" destination="poB-Dw-rmk" id="6WM-74-0Y2"/>
                 <outlet property="maxAvailabelCoinsLabel" destination="jV3-2Q-Bu6" id="OSq-b0-GOc"/>
                 <outlet property="rateLabel" destination="A8A-rW-P2C" id="34N-b7-r8G"/>
+                <outlet property="tableView" destination="1WV-NM-wSc" id="XWD-Sl-2ge"/>
                 <outlet property="totalMarketCapitalizationLabel" destination="bdr-ct-bG7" id="9mn-Wd-OEp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poB-Dw-rmk">
-                    <rect key="frame" x="20" y="68" width="185.5" height="37"/>
+                    <rect key="frame" x="16" y="68" width="378" height="37"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="C7O-sV-Hn5" userLabel="ExchangeRates">
-                    <rect key="frame" x="20" y="135.5" width="185.5" height="40"/>
+                    <rect key="frame" x="16" y="135.5" width="378" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCHANGE RATE USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ely-us-Ieb">
                             <rect key="frame" x="0.0" y="0.0" width="123" height="19.5"/>
@@ -52,7 +53,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TlP-aB-dbv" userLabel="TotalCoins">
-                    <rect key="frame" x="20" y="199.5" width="185.5" height="40"/>
+                    <rect key="frame" x="16" y="199.5" width="378" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL COINS AVAILABLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAT-5k-fdJ">
                             <rect key="frame" x="0.0" y="0.0" width="141.5" height="19.5"/>
@@ -74,7 +75,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GkI-MS-CiY" userLabel="MaxCoins">
-                    <rect key="frame" x="20" y="251.5" width="185.5" height="40"/>
+                    <rect key="frame" x="16" y="251.5" width="185.5" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX COINS AVAILABLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yVV-pJ-osg">
                             <rect key="frame" x="0.0" y="0.0" width="185.5" height="19.5"/>
@@ -96,7 +97,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pgA-xa-fek" userLabel="TotalMarketCap">
-                    <rect key="frame" x="20" y="303.5" width="185.5" height="40"/>
+                    <rect key="frame" x="16" y="303.5" width="378" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL MARKET CAPITALIZATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V9B-er-nUf">
                             <rect key="frame" x="0.0" y="0.0" width="185.5" height="19.5"/>
@@ -117,21 +118,28 @@
                         <constraint firstAttribute="height" constant="40" id="p1R-Io-dyO"/>
                     </constraints>
                 </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1WV-NM-wSc">
+                    <rect key="frame" x="0.0" y="351.5" width="414" height="510.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pgA-xa-fek" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Axr-Z0-znh"/>
+                <constraint firstItem="1WV-NM-wSc" firstAttribute="top" secondItem="pgA-xa-fek" secondAttribute="bottom" constant="8" id="3e3-80-LSx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1WV-NM-wSc" secondAttribute="bottom" id="7cb-r7-7Rq"/>
+                <constraint firstItem="pgA-xa-fek" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Axr-Z0-znh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pgA-xa-fek" secondAttribute="trailing" constant="20" id="EXB-uQ-v79"/>
                 <constraint firstItem="TlP-aB-dbv" firstAttribute="top" secondItem="C7O-sV-Hn5" secondAttribute="bottom" constant="24" id="FIF-dx-4WN"/>
-                <constraint firstItem="TlP-aB-dbv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HiF-9C-xdc"/>
-                <constraint firstItem="GkI-MS-CiY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Iye-pq-ol3"/>
-                <constraint firstItem="C7O-sV-Hn5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="J9i-hr-YV3"/>
+                <constraint firstItem="TlP-aB-dbv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="HiF-9C-xdc"/>
+                <constraint firstItem="C7O-sV-Hn5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="J9i-hr-YV3"/>
                 <constraint firstItem="C7O-sV-Hn5" firstAttribute="top" secondItem="poB-Dw-rmk" secondAttribute="bottom" constant="30.5" id="Nsl-yJ-kTL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TlP-aB-dbv" secondAttribute="trailing" constant="20" id="Ue1-fQ-gIl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GkI-MS-CiY" secondAttribute="trailing" constant="20" id="bhE-6r-09R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1WV-NM-wSc" secondAttribute="trailing" id="bBa-CG-EwM"/>
+                <constraint firstItem="1WV-NM-wSc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dwO-ye-tUw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C7O-sV-Hn5" secondAttribute="trailing" constant="20" id="iCm-3s-s8V"/>
-                <constraint firstItem="poB-Dw-rmk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mKq-Ms-cgo"/>
+                <constraint firstItem="GkI-MS-CiY" firstAttribute="leading" secondItem="TlP-aB-dbv" secondAttribute="leading" id="iMR-fE-i6l"/>
+                <constraint firstItem="poB-Dw-rmk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mKq-Ms-cgo"/>
                 <constraint firstItem="GkI-MS-CiY" firstAttribute="top" secondItem="TlP-aB-dbv" secondAttribute="bottom" constant="12" id="rmv-t6-xuV"/>
                 <constraint firstItem="pgA-xa-fek" firstAttribute="top" secondItem="GkI-MS-CiY" secondAttribute="bottom" constant="12" id="tgO-KR-ECg"/>
                 <constraint firstItem="poB-Dw-rmk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="u97-ea-YyW"/>
