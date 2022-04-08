@@ -12,6 +12,10 @@ import MagicalRecord
 class DatabaseHandler: NSObject {
 
     var items: [ListingLatest] = []
+    var timer: Timer!
+    let defaultTimeTick: TimeInterval = 1
+    let timeoutTargetValue: TimeInterval = 300
+    var progressTime: TimeInterval = 0
     
     static let shared: DatabaseHandler = DatabaseHandler()
     
@@ -32,10 +36,36 @@ class DatabaseHandler: NSObject {
     
     private func fetchListWith(block: @escaping (_ items: Array<ListingLatest>) -> Void ) {
         MarketAPIManager.shared.fetchList { items in
+            self.updateLaunchDate()
             block(items)
         }
     }
     
+    private func updateLaunchDate() {
+        
+        progressTime = 0
+        
+        timer = Timer.scheduledTimer(timeInterval: defaultTimeTick, target: self, selector: #selector(timeOutUpdate), userInfo: NSNumber.init(floatLiteral: timeoutTargetValue), repeats: true)
+        
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+    }
+    
+    @objc func timeOutUpdate(tmr: Timer) {
+        
+        let progress: TimeInterval = tmr.userInfo as! TimeInterval
+        
+        progressTime += defaultTimeTick
+        if (progress < 0 && progressTime <= timeoutTargetValue) || (progress > 0 && progressTime >= timeoutTargetValue) {
+            
+            if (timer != nil) && timer.isValid {
+                timer.invalidate()
+                timer = nil
+            }
+            
+            self.updateList {
+            }
+        }
+    }
 }
 
 extension DatabaseHandler {
