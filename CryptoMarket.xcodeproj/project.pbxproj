@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23D4A7B7513A3F8954B6D8B6 /* Pods_CryptoMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D31B4C645109DFC97B743D /* Pods_CryptoMarket.framework */; };
+		1E11AE36D860D002237698D1 /* Pods_CryptoMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CDDC3F3D92C8B9C0ECC1B4 /* Pods_CryptoMarket.framework */; };
 		56038B5027FAF58400F74B78 /* MarketAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B4F27FAF58400F74B78 /* MarketAPIManager.swift */; };
 		56038B5727FB31A800F74B78 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B5627FB31A800F74B78 /* CurrencyResponse.swift */; };
 		56038B5927FC1B3400F74B78 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56038B5827FC1B3400F74B78 /* Platform.swift */; };
@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30D31B4C645109DFC97B743D /* Pods_CryptoMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CDDC3F3D92C8B9C0ECC1B4 /* Pods_CryptoMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56038B4F27FAF58400F74B78 /* MarketAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAPIManager.swift; sourceTree = "<group>"; };
 		56038B5627FB31A800F74B78 /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
 		56038B5827FC1B3400F74B78 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -59,8 +59,8 @@
 		56D775A6280014F90085A692 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		56D775A7280014F90085A692 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		56D775AA280021770085A692 /* DetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItem.swift; sourceTree = "<group>"; };
-		DF7061BCAA63BE1E39B2DB5C /* Pods-CryptoMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.debug.xcconfig"; sourceTree = "<group>"; };
-		FF1F48A1FD5D18B27287AB43 /* Pods-CryptoMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.release.xcconfig"; sourceTree = "<group>"; };
+		6033BB9641CA7A1853E999C0 /* Pods-CryptoMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.release.xcconfig"; sourceTree = "<group>"; };
+		C84E696AFE095C9FF32C17DF /* Pods-CryptoMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23D4A7B7513A3F8954B6D8B6 /* Pods_CryptoMarket.framework in Frameworks */,
+				1E11AE36D860D002237698D1 /* Pods_CryptoMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				562ADC6B27FE0C2E005842CF /* MagicalRecord.framework */,
-				30D31B4C645109DFC97B743D /* Pods_CryptoMarket.framework */,
+				49CDDC3F3D92C8B9C0ECC1B4 /* Pods_CryptoMarket.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,8 +239,8 @@
 		E97C75B1BBE5284250634296 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DF7061BCAA63BE1E39B2DB5C /* Pods-CryptoMarket.debug.xcconfig */,
-				FF1F48A1FD5D18B27287AB43 /* Pods-CryptoMarket.release.xcconfig */,
+				C84E696AFE095C9FF32C17DF /* Pods-CryptoMarket.debug.xcconfig */,
+				6033BB9641CA7A1853E999C0 /* Pods-CryptoMarket.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -252,11 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5628F28D27F5BF31009EA147 /* Build configuration list for PBXNativeTarget "CryptoMarket" */;
 			buildPhases = (
-				D0B7709171853ED5505F3B00 /* [CP] Check Pods Manifest.lock */,
+				C35BAC7AB0205EEBB3C5375A /* [CP] Check Pods Manifest.lock */,
 				5628F27227F5BF2F009EA147 /* Sources */,
 				5628F27327F5BF2F009EA147 /* Frameworks */,
 				5628F27427F5BF2F009EA147 /* Resources */,
-				09EAD5427AFE32149FD0DD1D /* [CP] Embed Pods Frameworks */,
+				4E89ED64635B6F79232C2707 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,7 +316,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09EAD5427AFE32149FD0DD1D /* [CP] Embed Pods Frameworks */ = {
+		4E89ED64635B6F79232C2707 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,7 +333,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0B7709171853ED5505F3B00 /* [CP] Check Pods Manifest.lock */ = {
+		C35BAC7AB0205EEBB3C5375A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,7 +512,7 @@
 		};
 		5628F28E27F5BF31009EA147 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF7061BCAA63BE1E39B2DB5C /* Pods-CryptoMarket.debug.xcconfig */;
+			baseConfigurationReference = C84E696AFE095C9FF32C17DF /* Pods-CryptoMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -540,7 +540,7 @@
 		};
 		5628F28F27F5BF31009EA147 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF1F48A1FD5D18B27287AB43 /* Pods-CryptoMarket.release.xcconfig */;
+			baseConfigurationReference = 6033BB9641CA7A1853E999C0 /* Pods-CryptoMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
