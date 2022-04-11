@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.5.0)
+  - MagicalRecord (2.4.0):
+    - MagicalRecord/Core (= 2.4.0)
+  - MagicalRecord/Core (2.4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  MagicalRecord:
+    :git: https://github.com/magicalpanda/MagicalRecord
+
+CHECKOUT OPTIONS:
+  MagicalRecord:
+    :commit: 6031f608b79c1d6802007aaed6efd100e11f59ba
+    :git: https://github.com/magicalpanda/MagicalRecord
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  MagicalRecord: 1f22a766156474d9f46a9b1e1ce59ca9e37830fc
+
+PODFILE CHECKSUM: 44585b085f4dbef6e9b6064f3c466a5ee6018d16
+
+COCOAPODS: 1.11.2
