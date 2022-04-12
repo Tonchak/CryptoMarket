@@ -81,14 +81,24 @@ class DatabaseHandler: NSObject {
     }
     
     @objc func checkLaunchDate () {
-        let started: Date = UserDefaults.standard.value(forKey: "date.launch") as! Date
-        let now = Date()
-        let diff = now.timeIntervalSince(started)
         
-        if diff > timeoutTargetValue {
-            UserDefaults.standard.set(now, forKey: "date.launch")
+        if (UserDefaults.standard.value(forKey: "date.launch") != nil) {
+            
+            let started: Date = UserDefaults.standard.value(forKey: "date.launch") as! Date
+            let now = Date()
+            let diff = now.timeIntervalSince(started)
+            
+            if diff > timeoutTargetValue {
+                UserDefaults.standard.set(now, forKey: "date.launch")
+                updateList { }
+                Swift.print(diff)
+            }
+            
+        } else {
+            
+            UserDefaults.standard.set(Date(), forKey: "date.launch")
             updateList { }
-            Swift.print(diff)
+            
         }
         
     }

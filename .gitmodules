@@ -1,0 +1,6 @@
+[submodule "CryptoMarket/Vendor/MagicalRecord"]
+	path = CryptoMarket/Vendor/MagicalRecord
+	url = https://github.com/magicalpanda/MagicalRecord.git
+[submodule "CryptoMarket/Alamofire"]
+	path = CryptoMarket/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
