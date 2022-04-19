@@ -8,9 +8,15 @@
 import UIKit
 import Alamofire
 
-class MarketAPIManager: NSObject {
+class MarketAPIManager {
 
-    static let shared: MarketAPIManager = MarketAPIManager()
+    static let shared: MarketAPIManager = {
+        let instance = MarketAPIManager()
+        
+        return instance
+    }()
+    
+    private init() {}
     
     private var afManager: Session = Alamofire.Session(configuration: URLSessionConfiguration.default)
     private let rootLink: String = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
@@ -32,10 +38,10 @@ class MarketAPIManager: NSObject {
         return Array.init()
     }
     
-    // MARK: - Private workflow
-    
-    func fetchAPIWithRequest(request: URLRequest,  closure: () -> Void ) {
-        
+}
+
+extension MarketAPIManager: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        return self
     }
-    
 }

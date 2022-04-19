@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56521C15280ED98E00AB8CA4 /* CryptoMarketTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56521C00280ED5D000AB8CA4 /* CryptoMarketTestTests.swift */; };
+		56521C17280EDF3400AB8CA4 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C39D28057FC6000558AD /* DatabaseHandler.swift */; };
+		56521C18280EDF6900AB8CA4 /* MarketAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C39C28057FC6000558AD /* MarketAPIManager.swift */; };
+		56521C19280EDF6E00AB8CA4 /* ListingLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3A728057FE9000558AD /* ListingLatest.swift */; };
+		56521C1A280EDF8900AB8CA4 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3A528057FE9000558AD /* CurrencyResponse.swift */; };
+		56521C1B280EDF9700AB8CA4 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3A628057FE9000558AD /* Platform.swift */; };
+		56521C1C280EDFB100AB8CA4 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3C328058177000558AD /* Currency+CoreDataClass.swift */; };
 		56A976F5280DDF1A00ACBDCB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56A976F4280DDF1A00ACBDCB /* Alamofire */; };
 		56A97732280DE37200ACBDCB /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9771B280DE36000ACBDCB /* MagicalRecord.framework */; };
 		56A97733280DE37200ACBDCB /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9771B280DE36000ACBDCB /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		56521C02280ED5D000AB8CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56B5C37828057DA7000558AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56B5C37F28057DA7000558AD;
+			remoteInfo = CryptoMarketTest;
+		};
 		56A9771A280DE36000ACBDCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
@@ -137,6 +151,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56521BFE280ED5D000AB8CA4 /* CryptoMarketTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMarketTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56521C00280ED5D000AB8CA4 /* CryptoMarketTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketTestTests.swift; sourceTree = "<group>"; };
 		56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = Vendor/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
 		56B5C38028057DA7000558AD /* CryptoMarketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B5C38328057DA7000558AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +182,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56521BFB280ED5D000AB8CA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B5C37D28057DA7000558AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +201,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56521BFF280ED5D000AB8CA4 /* CryptoMarketTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				56521C00280ED5D000AB8CA4 /* CryptoMarketTestTests.swift */,
+			);
+			path = CryptoMarketTestTests;
+			sourceTree = "<group>";
+		};
 		56A9770C280DE35F00ACBDCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +233,7 @@
 			children = (
 				56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */,
 				56B5C38228057DA7000558AD /* CryptoMarketTest */,
+				56521BFF280ED5D000AB8CA4 /* CryptoMarketTestTests */,
 				56B5C38128057DA7000558AD /* Products */,
 				91850390822A83C8AD3FB715 /* Frameworks */,
 			);
@@ -211,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				56B5C38028057DA7000558AD /* CryptoMarketTest.app */,
+				56521BFE280ED5D000AB8CA4 /* CryptoMarketTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,6 +369,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		56521BFD280ED5D000AB8CA4 /* CryptoMarketTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56521C12280ED5D000AB8CA4 /* Build configuration list for PBXNativeTarget "CryptoMarketTestTests" */;
+			buildPhases = (
+				56521BFA280ED5D000AB8CA4 /* Sources */,
+				56521BFB280ED5D000AB8CA4 /* Frameworks */,
+				56521BFC280ED5D000AB8CA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56521C03280ED5D000AB8CA4 /* PBXTargetDependency */,
+			);
+			name = CryptoMarketTestTests;
+			productName = CryptoMarketTestTests;
+			productReference = 56521BFE280ED5D000AB8CA4 /* CryptoMarketTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		56B5C37F28057DA7000558AD /* CryptoMarketTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56B5C39728057DA9000558AD /* Build configuration list for PBXNativeTarget "CryptoMarketTest" */;
@@ -367,6 +418,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					56521BFD280ED5D000AB8CA4 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 56B5C37F28057DA7000558AD;
+					};
 					56B5C37F28057DA7000558AD = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -395,6 +450,7 @@
 			projectRoot = "";
 			targets = (
 				56B5C37F28057DA7000558AD /* CryptoMarketTest */,
+				56521BFD280ED5D000AB8CA4 /* CryptoMarketTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -487,6 +543,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		56521BFC280ED5D000AB8CA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B5C37E28057DA7000558AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +565,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56521BFA280ED5D000AB8CA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56521C1B280EDF9700AB8CA4 /* Platform.swift in Sources */,
+				56521C18280EDF6900AB8CA4 /* MarketAPIManager.swift in Sources */,
+				56521C19280EDF6E00AB8CA4 /* ListingLatest.swift in Sources */,
+				56521C15280ED98E00AB8CA4 /* CryptoMarketTestTests.swift in Sources */,
+				56521C1A280EDF8900AB8CA4 /* CurrencyResponse.swift in Sources */,
+				56521C1C280EDFB100AB8CA4 /* Currency+CoreDataClass.swift in Sources */,
+				56521C17280EDF3400AB8CA4 /* DatabaseHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56B5C37C28057DA7000558AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +606,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		56521C03280ED5D000AB8CA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56B5C37F28057DA7000558AD /* CryptoMarketTest */;
+			targetProxy = 56521C02280ED5D000AB8CA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		56B5C39128057DA9000558AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -541,6 +626,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		56521C04280ED5D000AB8CA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CYCS9B5KF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonchak.CryptoMarketTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoMarketTest.app/CryptoMarketTest";
+			};
+			name = Debug;
+		};
+		56521C05280ED5D000AB8CA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CYCS9B5KF2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonchak.CryptoMarketTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoMarketTest.app/CryptoMarketTest";
+			};
+			name = Release;
+		};
 		56B5C39528057DA9000558AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -712,6 +833,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56521C12280ED5D000AB8CA4 /* Build configuration list for PBXNativeTarget "CryptoMarketTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56521C04280ED5D000AB8CA4 /* Debug */,
+				56521C05280ED5D000AB8CA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		56B5C37B28057DA7000558AD /* Build configuration list for PBXProject "CryptoMarketTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

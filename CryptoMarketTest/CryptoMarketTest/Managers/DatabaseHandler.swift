@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 import MagicalRecord
 
-class DatabaseHandler: NSObject {
+class DatabaseHandler {
 
     var items: [ListingLatest] = []
     var timer: Timer!
@@ -17,15 +17,27 @@ class DatabaseHandler: NSObject {
     let timeoutTargetValue: TimeInterval = 300
     var progressTime: TimeInterval = 0
     
-    static let shared: DatabaseHandler = DatabaseHandler()
+    static let shared: DatabaseHandler = {
+        let instance = DatabaseHandler()
+        NotificationCenter.default.addObserver(instance, selector: #selector(checkLaunchDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+        return instance
+    }()
     
-    override init() {
-        super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(checkLaunchDate), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
+    private init() {}
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    static func checkAPIManagerInstance() {
+        let instance1 = MarketAPIManager.shared
+        let instance2 = MarketAPIManager.shared
+
+        if (instance1 === instance2) {
+            print("APIManager works, both variables contain the same instance.")
+        } else {
+            print("APIManager failed, variables contain different instances.")
+        }
     }
     
     public func fetchCurrenciesList() {
@@ -104,6 +116,12 @@ class DatabaseHandler: NSObject {
     }
 }
 
+extension DatabaseHandler: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        return self
+    }
+}
+
 extension DatabaseHandler {
     var models: [ListingLatest]? {
         get {
@@ -124,18 +142,17 @@ extension DatabaseHandler {
                         currency = Currency.mr_createEntity(in: context)
                     }
                     
-                    currency?.identifier = Int16(item.id)
-                    currency?.name = item.name
-                    currency?.symbol = item.symbol
-                    currency?.slug = item.slug
-                    currency?.price = (item.quote?.USD?.price) ?? 0
-                    currency?.totalSupply = item.total_supply ?? 0
-                    currency?.maxSupply = String(format: "%d", item.max_supply ?? 0)
-                    currency?.fullyDilutedMarketCap = (item.quote?.USD?.fully_diluted_market_cap) ?? 0
-                    currency?.percentChange1h = (item.quote?.USD?.percent_change_1h) ?? 0
-                    currency?.percentChange24h = (item.quote?.USD?.percent_change_24h) ?? 0
-                    currency?.percentChange7d = (item.quote?.USD?.percent_change_7d) ?? 0
-                    
+                    currency?.setValue(Int16(item.id), forKey: "identifier")
+                    currency?.setValue(item.name, forKey: "name")
+                    currency?.setValue(item.symbol, forKey: "symbol")
+                    currency?.setValue(item.slug, forKey: "slug")
+                    currency?.setValue(item.quote?.USD?.price, forKey: "price")
+                    currency?.setValue(item.total_supply ?? 0, forKey: "totalSupply")
+                    currency?.setValue(String(format: "%d", item.max_supply ?? 0), forKey: "maxSupply")
+                    currency?.setValue((item.quote?.USD?.fully_diluted_market_cap) ?? 0, forKey: "fullyDilutedMarketCap")
+                    currency?.setValue((item.quote?.USD?.percent_change_1h) ?? 0, forKey: "percentChange1h")
+                    currency?.setValue((item.quote?.USD?.percent_change_24h) ?? 0, forKey: "percentChange24h")
+                    currency?.setValue((item.quote?.USD?.percent_change_7d) ?? 0, forKey: "percentChange7d")
                 })
             }
             
