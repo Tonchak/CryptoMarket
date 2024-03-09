@@ -1,10 +1,3 @@
-//
-//  CurrencyDetailViewController.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 5/4/22.
-//
-
 import UIKit
 
 class CurrencyDetailViewController: UIViewController {
@@ -48,13 +41,10 @@ class CurrencyDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: NSStringFromClass(DetailTableViewCell.self))
         
         models = dataModel?.models
-        
     }
-
 }
 
 extension CurrencyDetailViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0
     }
@@ -68,7 +58,6 @@ extension CurrencyDetailViewController: UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 extension CurrencyDetailViewController: UITableViewDelegate {
@@ -76,4 +65,3 @@ extension CurrencyDetailViewController: UITableViewDelegate {
         return "Percent changes to:"
     }
 }
-

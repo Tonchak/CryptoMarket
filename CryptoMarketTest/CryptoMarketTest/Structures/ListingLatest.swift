@@ -1,14 +1,6 @@
-//
-//  ListingLatest.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 5/4/22.
-//
-
 import Foundation
 
 struct ListingLatest: Decodable {
-    
     let id: Int
     let name: String
     let symbol: String?
@@ -32,10 +24,11 @@ struct ListingLatest: Decodable {
         case name
         case symbol
     }
-    
 }
 
-extension ListingLatest.Property: CaseIterable { }
+extension ListingLatest.Property: CaseIterable {
+    
+}
 
 extension ListingLatest.Property: RawRepresentable {
     typealias RawValue = String
@@ -54,7 +47,6 @@ extension ListingLatest.Property: RawRepresentable {
         case .symbol: return "Code"
         }
     }
-    
 }
 
 struct Quote: Decodable {
@@ -76,4 +68,3 @@ struct USD: Decodable {
     let fully_diluted_market_cap: Double?
     let last_updated: String?
 }
-

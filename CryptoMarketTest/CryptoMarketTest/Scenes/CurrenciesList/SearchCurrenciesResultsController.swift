@@ -1,10 +1,3 @@
-//
-//  SearchCurrenciesResultsController.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 7/4/22.
-//
-
 import UIKit
 import MagicalRecord
 
@@ -57,7 +50,6 @@ class SearchCurrenciesResultsController: UITableViewController {
         self.presentingViewController?.navigationController?.pushViewController(controller, animated: true)
     }
 }
-
 
 extension SearchCurrenciesResultsController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

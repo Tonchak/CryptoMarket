@@ -1,14 +1,6 @@
-//
-//  CurrencyItemTableViewCell.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 31/3/22.
-//
-
 import UIKit
 
 class CurrencyItemTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var currencyCodeLabel: UILabel!
     @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var exchangeRateLabel: UILabel!
@@ -23,7 +15,6 @@ class CurrencyItemTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
 
 extension CurrencyItemTableViewCell {
@@ -39,4 +30,3 @@ extension CurrencyItemTableViewCell {
         }
     }
 }
-

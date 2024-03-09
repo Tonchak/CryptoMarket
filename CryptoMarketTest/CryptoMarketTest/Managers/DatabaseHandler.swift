@@ -1,16 +1,8 @@
-//
-//  DatabaseHandler.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 6/4/22.
-//
-
 import UIKit
 import CoreData
 import MagicalRecord
 
 class DatabaseHandler {
-
     var items: [ListingLatest] = []
     var timer: Timer!
     let defaultTimeTick: TimeInterval = 1
@@ -93,9 +85,7 @@ class DatabaseHandler {
     }
     
     @objc func checkLaunchDate () {
-        
         if (UserDefaults.standard.value(forKey: "date.launch") != nil) {
-            
             let started: Date = UserDefaults.standard.value(forKey: "date.launch") as! Date
             let now = Date()
             let diff = now.timeIntervalSince(started)
@@ -105,14 +95,10 @@ class DatabaseHandler {
                 updateList { }
                 Swift.print(diff)
             }
-            
         } else {
-            
             UserDefaults.standard.set(Date(), forKey: "date.launch")
             updateList { }
-            
         }
-        
     }
 }
 
@@ -131,17 +117,13 @@ extension DatabaseHandler {
             items = newValue!
             
             for item in self.items {
-                
                 MagicalRecord.save({ context in
-                    
                     let predicate = NSPredicate(format: "identifier == %d", item.id)
-                    
                     var currency = Currency.mr_findFirst(with: predicate, in: context)
-
+                    
                     if currency == nil {
                         currency = Currency.mr_createEntity(in: context)
                     }
-                    
                     currency?.setValue(Int16(item.id), forKey: "identifier")
                     currency?.setValue(item.name, forKey: "name")
                     currency?.setValue(item.symbol, forKey: "symbol")
@@ -155,7 +137,6 @@ extension DatabaseHandler {
                     currency?.setValue((item.quote?.USD?.percent_change_7d) ?? 0, forKey: "percentChange7d")
                 })
             }
-            
         }
     }
 }
