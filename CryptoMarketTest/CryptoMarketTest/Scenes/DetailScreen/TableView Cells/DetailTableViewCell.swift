@@ -1,10 +1,3 @@
-//
-//  DetailTableViewCell.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 8/4/22.
-//
-
 import UIKit
 
 class DetailTableViewCell: UITableViewCell {
@@ -21,7 +14,6 @@ class DetailTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
 
 extension DetailTableViewCell {

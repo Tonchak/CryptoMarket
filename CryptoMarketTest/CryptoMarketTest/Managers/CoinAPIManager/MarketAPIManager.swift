@@ -1,29 +1,16 @@
-//
-//  MarketAPIManager.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 4/4/22.
-//
-
 import UIKit
 import Alamofire
 
 class MarketAPIManager {
-    
     private var afManager: Session = Alamofire.Session(configuration: URLSessionConfiguration.default)
     private let rootLink: String = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
-
-    // MARK: - Initialization
     
     static let shared: MarketAPIManager = {
         let instance = MarketAPIManager()
-        
         return instance
     }()
     
     private init() {}
-    
-    // MARK: -
     
     func fetchList(completionHandler: @escaping (_ items: Array<ListingLatest>) -> Void) {
         
@@ -37,7 +24,6 @@ class MarketAPIManager {
             completionHandler(allCurrencies.data!)
         }
     }
-    
 }
 
 extension MarketAPIManager: NSCopying {

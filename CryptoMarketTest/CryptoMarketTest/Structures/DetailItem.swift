@@ -1,11 +1,3 @@
-//
-//  DetailItem.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 8/4/22.
-//
-
-import Foundation
 import UIKit
 
 struct DetailItem {
@@ -18,4 +10,3 @@ struct TextColor {
     let redColor: UIColor = .systemRed
     let greenColor: UIColor = .systemGreen
 }
-

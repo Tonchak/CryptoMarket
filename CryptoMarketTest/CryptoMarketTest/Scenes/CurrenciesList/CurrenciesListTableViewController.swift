@@ -1,10 +1,3 @@
-//
-//  CurrenciesListTableViewController.swift
-//  CryptoMarket
-//
-//  Created by Vitaliy Tonchak on 31/3/22.
-//
-
 import UIKit
 import CoreData
 import MagicalRecord
@@ -12,16 +5,12 @@ import MagicalRecord
 class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var resultsController:SearchCurrenciesResultsController!
-    
     var searchController:UISearchController!
-    
     var items: [ListingLatest] = []
     var filteredItems: [ListingLatest] = []
-    
     var managedContext: NSManagedObjectContext?
-    private var persistentContainer = NSPersistentContainer(name: "CryptoMarketTest")
     var currencies: [NSManagedObject] = []
-
+    private var persistentContainer = NSPersistentContainer(name: "CryptoMarketTest")
     
     // MARK: - Life cycle
     
@@ -36,9 +25,8 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.backgroundColor = .clear
         self.refreshControl!.tintColor = .secondaryLabel
-        self.refreshControl! .addTarget(self, action: #selector(refreshCurrencies), for: .valueChanged)
-        tableView .addSubview(self.refreshControl!)
-        
+        self.refreshControl!.addTarget(self, action: #selector(refreshCurrencies), for: .valueChanged)
+        tableView.addSubview(self.refreshControl!)
     }
 
     override func viewDidLoad() {
@@ -55,14 +43,10 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         
         searchController.searchBar.delegate = self
         
-        persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
-            
+        persistentContainer.loadPersistentStores { persistentStoreDescription, error in
             if let error = error {
-                
-                print("\(error), \(error.localizedDescription)")
-                
+                print(error.localizedDescription)
             } else {
-                
                 do {
                     try self.fetchedResultsController.performFetch()
                 } catch {
@@ -70,28 +54,21 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
                     print("Unable to Perform Fetch Request")
                     print("\(fetchError), \(fetchError.localizedDescription)")
                 }
-                
             }
         }
-        
         DatabaseHandler.shared.fetchCurrenciesList()
-        
     }
     
-    // MARK: -
-    
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
     var isFiltering: Bool {
-      let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
-      return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
-
     
     private func filterContentForSearchText(searchText: String) {
-        
         let strippedString: String = searchText .trimmingCharacters(in: NSCharacterSet.whitespaces)
         var searchItems: Array<String> = []
         if strippedString.count > 0 {
@@ -143,7 +120,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         resultsController.tableView.reloadData()
     }
     
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -151,7 +127,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let currencies = fetchedResultsController.fetchedObjects else {
             return 0
         }
@@ -159,10 +134,8 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         if isFiltering {
             return filteredItems.count
         }
-        
         return currencies.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -188,7 +161,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Currency> = {
         
         let fetchRequest: NSFetchRequest<Currency> = Currency.fetchRequest()
@@ -213,9 +185,7 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         self.tableView.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-
-    }
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {}
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
@@ -237,8 +207,6 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
-    
-    // MARK: - Actions
     
     @objc func refreshCurrencies()  {
         DatabaseHandler.shared.updateList {
@@ -262,4 +230,3 @@ extension CurrenciesListTableViewController: UISearchBarDelegate {
         
     }
 }
-
