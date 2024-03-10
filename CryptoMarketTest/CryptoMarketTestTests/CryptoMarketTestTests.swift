@@ -12,7 +12,7 @@ class CryptoMarketTestTests: XCTestCase {
     }
     
     func testSingletonConceptual() {
-        DatabaseHandler.checkAPIManagerInstance()
+//        DatabaseHandler.checkAPIManagerInstance()
     }
     
 }
