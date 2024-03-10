@@ -2,9 +2,9 @@ import UIKit
 import CoreData
 import MagicalRecord
 
-class DatabaseHandler {
-    var items: [ListingLatest] = []
-    var timer: Timer!
+final class DatabaseHandler {
+    var items: [ListingLatest]?
+    var timer: Timer?
     let defaultTimeTick: TimeInterval = 1
     let timeoutTargetValue: TimeInterval = 300
     var progressTime: TimeInterval = 0
@@ -15,15 +15,19 @@ class DatabaseHandler {
         return instance
     }()
     
-    private init() {}
+    private init(items: [ListingLatest]? = [], timer: Timer? = Timer(), progressTime: TimeInterval = 0) {
+        self.items = items
+        self.timer = timer
+        self.progressTime = progressTime
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     static func checkAPIManagerInstance() {
-        let instance1 = MarketAPIManager.shared
-        let instance2 = MarketAPIManager.shared
+        let instance1 = APIManager.shared
+        let instance2 = APIManager.shared
 
         if (instance1 === instance2) {
             print("APIManager works, both variables contain the same instance.")
@@ -47,8 +51,8 @@ class DatabaseHandler {
     
     // MARK: -
     
-    private func fetchListWith(block: @escaping (_ items: Array<ListingLatest>) -> Void ) {
-        MarketAPIManager.shared.fetchList { items in
+    private func fetchListWith(block: @escaping (_ items: [ListingLatest]) -> Void ) {
+        APIManager.shared.fetchList { items in
             self.updateLaunchDate()
             block(items)
         }
@@ -62,8 +66,14 @@ class DatabaseHandler {
         
         progressTime = 0
         
-        timer = Timer.scheduledTimer(timeInterval: defaultTimeTick, target: self, selector: #selector(timeOutUpdate), userInfo: NSNumber.init(floatLiteral: timeoutTargetValue), repeats: true)
-        
+        timer = Timer.scheduledTimer(
+            timeInterval: defaultTimeTick,
+            target: self,
+            selector: #selector(timeOutUpdate),
+            userInfo: NSNumber.init(floatLiteral: timeoutTargetValue), 
+            repeats: true
+        )
+        guard let timer = timer else { return }
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
     
@@ -78,10 +88,8 @@ class DatabaseHandler {
     }
     
     func stopTimer() {
-        if (timer != nil) && timer.isValid {
-            timer.invalidate()
-            timer = nil
-        }
+        guard let timer = timer, timer.isValid else { return }
+        timer.invalidate()
     }
     
     @objc func checkLaunchDate () {
@@ -113,10 +121,11 @@ extension DatabaseHandler {
         get {
             return items
         }
-        set (newValue) {
-            items = newValue!
+        set {
+            guard let items = newValue else { return }
+            self.items = items
             
-            for item in self.items {
+            for item in items {
                 MagicalRecord.save({ context in
                     let predicate = NSPredicate(format: "identifier == %d", item.id)
                     var currency = Currency.mr_findFirst(with: predicate, in: context)

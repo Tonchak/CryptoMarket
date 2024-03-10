@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CurrenciesListTableViewController())
+        window?.rootViewController = UINavigationController(rootViewController: CurrenciesListTableViewController(style: .plain))
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

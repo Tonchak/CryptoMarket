@@ -2,11 +2,11 @@ import UIKit
 import CoreData
 import MagicalRecord
 
-class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+final class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var resultsController:SearchCurrenciesResultsController!
-    var searchController:UISearchController!
-    var items: [ListingLatest] = []
+    let viewModel = CurrenciesListTableViewModel()
+    var resultsController: SearchCurrenciesResultsController!
+    var searchController: UISearchController!
     var filteredItems: [ListingLatest] = []
     var managedContext: NSManagedObjectContext?
     var currencies: [NSManagedObject] = []
@@ -56,7 +56,7 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
                 }
             }
         }
-        DatabaseHandler.shared.fetchCurrenciesList()
+        viewModel.fetchData()
     }
     
     var isSearchBarEmpty: Bool {
@@ -70,15 +70,15 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
     
     private func filterContentForSearchText(searchText: String) {
         let strippedString: String = searchText .trimmingCharacters(in: NSCharacterSet.whitespaces)
-        var searchItems: Array<String> = []
+        var searchItems: [String] = []
         if strippedString.count > 0 {
             searchItems = strippedString .components(separatedBy: NSCharacterSet.whitespaces)
         }
-        var andMatchPredicates: Array <NSPredicate> = []
+        var andMatchPredicates: [NSPredicate] = []
         
         for text in searchItems {
             
-            var searchItemsPredicates: Array<NSPredicate> = []
+            var searchItemsPredicates: [NSPredicate] = []
             
             // by name
             let lhs = NSExpression.init(forKeyPath: "name")
@@ -99,7 +99,7 @@ class CurrenciesListTableViewController: UITableViewController, NSFetchedResults
         let finalCompoundPredicate: NSCompoundPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: andMatchPredicates)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init()
         let entity: NSEntityDescription = Currency.mr_entityDescription(in: NSManagedObjectContext.mr_default())!
-        let sortDescriptors: Array<NSSortDescriptor> = [NSSortDescriptor.init(key: "name", ascending: true)]
+        let sortDescriptors = [NSSortDescriptor.init(key: "name", ascending: true)]
         
         fetchRequest.entity = entity
         fetchRequest.predicate = finalCompoundPredicate
