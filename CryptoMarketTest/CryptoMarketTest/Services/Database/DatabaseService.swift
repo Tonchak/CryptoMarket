@@ -5,3 +5,9 @@ protocol DatabaseService: Actor, Sendable {
     
     func fetchCurrenciesList() async throws -> CurrencyResponse
 }
+
+extension DatabaseService {
+    func fetchCurrenciesList() async throws -> CurrencyResponse {
+        throw DatabaseError.readingError("--")
+    }
+}

@@ -2,8 +2,16 @@ import Foundation
 import CoreData
 import MagicalRecord
 
-final class CurrenciesListTableViewModel {
-    var service: DatabaseService = DatabaseServiceImplementation()
+final class CurrenciesListViewModel {
+    
+    private let service: DatabaseService?
+    var currencyDAO: CurrencyDataAccessObjectProtocol
+    
+    init(service: DatabaseService? = DatabaseServiceImplementation(),
+         currencyDAO: CurrencyDataAccessObjectProtocol = CurrencyDataAccessObject()) {
+        self.service = service
+        self.currencyDAO = currencyDAO
+    }
     
     func fetchData() {
         Task {
@@ -12,18 +20,31 @@ final class CurrenciesListTableViewModel {
     }
     
     @MainActor internal func _fetchData() async {
+        guard let service = service else { return }
+        
         do {
             let response = try await service.fetchCurrenciesList()
-            print(response.status as Any)
             guard let data = response.data else { return }
-            storeData(data)
+            //storeData(data)
+            try await saveData(data)
         } catch {
             print(error.localizedDescription)
         }
     }
+    
+    func getList() throws -> [Currency] {
+        try currencyDAO.getCurrencies()
+    }
 }
 
-extension CurrenciesListTableViewModel {
+extension CurrenciesListViewModel {
+    internal func saveData(_ data: [ListingLatest]) async throws {
+        async let currencies = try currencyDAO.addCurrencies(data)
+        _ = try await currencies
+    }
+}
+
+extension CurrenciesListViewModel {
     internal func storeData(_ data: [ListingLatest]) {
         for item in data {
             MagicalRecord.save({ context in

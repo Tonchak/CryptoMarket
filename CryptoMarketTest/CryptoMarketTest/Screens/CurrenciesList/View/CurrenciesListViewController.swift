@@ -2,9 +2,9 @@ import UIKit
 import CoreData
 import MagicalRecord
 
-final class CurrenciesListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+final class CurrenciesListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    let viewModel = CurrenciesListTableViewModel()
+    let viewModel = CurrenciesListViewModel()
     var resultsController: SearchCurrenciesResultsController!
     var searchController: UISearchController!
     var filteredItems: [ListingLatest] = []
@@ -217,7 +217,7 @@ final class CurrenciesListTableViewController: UITableViewController, NSFetchedR
     }
 }
 
-extension CurrenciesListTableViewController: UISearchResultsUpdating {
+extension CurrenciesListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text ?? "")
     }
@@ -225,7 +225,7 @@ extension CurrenciesListTableViewController: UISearchResultsUpdating {
 
 // MARK: - UISearchBarDelegate
 
-extension CurrenciesListTableViewController: UISearchBarDelegate {
+extension CurrenciesListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
     }
