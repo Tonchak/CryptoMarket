@@ -3,7 +3,7 @@ import UIKit
 class CurrencyDetailViewController: UIViewController {
     
     var dataModel: CMTableViewCellDataModel?
-    var models: Array<DetailItem>?
+    var models: [DetailItem]?
     
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!

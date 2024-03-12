@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "CE56FCC4-0EB5-4D8F-B79B-E241B4D2D6A0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CryptoMarketTest.xcodeproj",
+        "identifier" : "56521BFD280ED5D000AB8CA4",
+        "name" : "CryptoMarketTestTests"
+      }
+    }
+  ],
+  "version" : 1
+}

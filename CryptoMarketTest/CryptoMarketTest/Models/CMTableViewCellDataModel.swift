@@ -10,7 +10,7 @@ class CMTableViewCellDataModel: NSObject {
     var totalSupply: Double?
     var maxSupplyText: String?
     var totalMarketCap: Double?
-    var models: Array<DetailItem>?
+    var models: [DetailItem]?
     
     // MARK: - Init
     

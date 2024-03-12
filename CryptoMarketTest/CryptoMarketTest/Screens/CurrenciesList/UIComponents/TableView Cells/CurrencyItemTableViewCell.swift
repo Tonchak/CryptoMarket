@@ -5,7 +5,6 @@ class CurrencyItemTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var exchangeRateLabel: UILabel!
     
-    private var dataSource: ListingLatest?
     private var _dataModel: CMTableViewCellDataModel?
 
     override func awakeFromNib() {

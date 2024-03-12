@@ -6,11 +6,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(windowScene: windowScene)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CurrenciesListTableViewController(style: .plain))
+        if ((UIApplication.shared.delegate as? AppDelegate) != nil) {
+            window = UIWindow(windowScene: windowScene)
+            window?.rootViewController = UINavigationController(rootViewController: CurrenciesListViewController(style: .plain))
+            window?.makeKeyAndVisible()            
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

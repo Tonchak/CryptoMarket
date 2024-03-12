@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 import MagicalRecord
 
 class SearchCurrenciesResultsController: UITableViewController {
