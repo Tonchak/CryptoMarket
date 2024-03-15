@@ -10,7 +10,7 @@ final class CurrenciesListViewModelTests: CryptoMarketTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        storage = DataStorageImplementation(inMemory: true)
+        storage = DataStorageImplementation(isInMemoryStore: false)
         service = DatabaseServiceMock()
         sut = CurrenciesListViewModel(service: service)
     }

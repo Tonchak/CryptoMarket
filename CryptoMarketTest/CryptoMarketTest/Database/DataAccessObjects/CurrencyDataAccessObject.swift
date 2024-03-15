@@ -11,7 +11,7 @@ final class CurrencyDataAccessObject: CoreDataAccessObject<Currency>, CurrencyDa
     
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency] {
-        let context = storage.context
+        let context = storage.mainContext
         return try await withCheckedThrowingContinuation { continuation in
             context.perform {
                 do {

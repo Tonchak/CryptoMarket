@@ -2,46 +2,58 @@ import Foundation
 import CoreData
 
 final class DataStorageImplementation: DataStorage {
-    var context: NSManagedObjectContext
+    
     static let shared = DataStorageImplementation()
     
-    init(inMemory: Bool = false) {
-        let databaseName = "CryptoMarketTest"
-        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle(for: DataStorageImplementation.self)])
-        guard let managedObjectModel else {
-            fatalError("Failed to create a ManagedObjectModel")
+    private let persistentContainer: NSPersistentContainer
+    var mainContext: NSManagedObjectContext {
+        return self.persistentContainer.viewContext
+    }
+    
+    init(isInMemoryStore: Bool = false) {
+        persistentContainer = NSPersistentContainer(name: "CryptoMarketTest")
+        
+        if isInMemoryStore {
+            persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
         
-        let persistentContainer = NSPersistentContainer(name: databaseName, managedObjectModel: managedObjectModel)
+        persistentContainer.loadPersistentStores { _, error in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+        
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
-        
-        self.context = persistentContainer.viewContext
-        self.context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        
-        if inMemory {
-            setupInMemory(persistentContainer)
-        }
-        
-        loadPersistentStores(persistentContainer)
     }
     
     func saveContext() throws {
-        if context.hasChanges {
-            try context.save()
+        let context = mainContext
+        
+        context.performAndWait {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+            context.reset()
         }
     }
     
-    private func setupInMemory(_ container: NSPersistentContainer) {
-        let description = NSPersistentStoreDescription()
-        description.url = URL(fileURLWithPath: "/dev/null")
-        container.persistentStoreDescriptions = [description]
-    }
-    
-    private func loadPersistentStores(_ container: NSPersistentContainer) {
-        container.loadPersistentStores { storeDescription, error in
-            if error != nil {
-                fatalError("Failure to load persistant store")
+    func saveContext(_ context: NSManagedObjectContext) throws {
+        guard context != mainContext else {
+            try saveContext()
+            return
+        }
+        
+        try context.performAndWait {
+            do {
+                try context.save()
+            } catch let error as NSError {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+            
+            try self.saveContext(self.mainContext)
         }
     }
 }

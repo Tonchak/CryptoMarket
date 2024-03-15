@@ -11,7 +11,7 @@ class CoreDataAccessObject<T: NSManagedObject>: DefaultDataAccessObject {
     }
     
     func getEntities() throws -> [T] {
-        let context = storage.context
+        let context = storage.mainContext
         guard let request = T.fetchRequest() as? NSFetchRequest<T> else {
             throw DatabaseError.readingError("CoreData entity can't de read!")
         }
@@ -19,7 +19,7 @@ class CoreDataAccessObject<T: NSManagedObject>: DefaultDataAccessObject {
     }
     
     func deleteAllEntities() async throws {
-        let c = self.storage.context
+        let c = self.storage.mainContext
         try await withCheckedThrowingContinuation { continuation in
             do {
                 try self.deleteAllEntities(in: c)
