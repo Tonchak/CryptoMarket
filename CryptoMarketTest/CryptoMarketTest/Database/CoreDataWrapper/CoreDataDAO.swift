@@ -1,19 +1,23 @@
 import Foundation
 import CoreData
 
-class CoreDataAccessObject<T: NSManagedObject>: DefaultDataAccessObject {
+protocol CoreDataStorable {
+    var id: String { get set }
+}
+
+class CoreDataDAO<Entity: CoreDataStorable, T: NSManagedObject>: BaseDAO {
+    typealias Storage = DataStorage
     
-    typealias LocalStorage = DataStorage
-    var storage: LocalStorage
+    var storage: Storage
     
-    required init(storage: LocalStorage = DataStorageImplementation.shared) {
+    required init(storage: Storage = DataStorageImplementation.shared) {
         self.storage = storage
     }
     
     func getEntities() throws -> [T] {
         let context = storage.mainContext
         guard let request = T.fetchRequest() as? NSFetchRequest<T> else {
-            throw DatabaseError.readingError("CoreData entity can't de read!")
+            throw CoreDataError.readingError("CoreData entity can't de read!")
         }
         return try context.fetch(request)
     }
@@ -31,7 +35,7 @@ class CoreDataAccessObject<T: NSManagedObject>: DefaultDataAccessObject {
     }
 }
 
-enum DatabaseError: Error, Equatable {
+enum CoreDataError: Error, Equatable {
     case writingError(String)
     case savingError(String)
     case readingError(String)

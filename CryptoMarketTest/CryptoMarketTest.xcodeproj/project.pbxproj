@@ -24,13 +24,15 @@
 		56B4E6C32B9E4A0A00851206 /* CryptoMarketTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6C22B9E4A0A00851206 /* CryptoMarketTestCase.swift */; };
 		56B4E6C72B9E53A800851206 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6C62B9E53A800851206 /* DataStorage.swift */; };
 		56B4E6C92B9E541D00851206 /* DataStorageImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6C82B9E541D00851206 /* DataStorageImplementation.swift */; };
-		56B4E6CC2B9E668600851206 /* CurrencyDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CB2B9E668600851206 /* CurrencyDataAccessObject.swift */; };
-		56B4E6CF2B9E66D600851206 /* DefaultDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CE2B9E66D600851206 /* DefaultDataAccessObject.swift */; };
-		56B4E6D12B9E680500851206 /* CoreDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6D02B9E680500851206 /* CoreDataAccessObject.swift */; };
+		56B4E6CC2B9E668600851206 /* CurrencyDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CB2B9E668600851206 /* CurrencyDAO.swift */; };
+		56B4E6CF2B9E66D600851206 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CE2B9E66D600851206 /* BaseDAO.swift */; };
+		56B4E6D12B9E680500851206 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6D02B9E680500851206 /* CoreDataDAO.swift */; };
 		56B4E74F2BA0D7D100851206 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E74E2BA0D7D100851206 /* main.swift */; };
 		56B4E7502BA0D8DF00851206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C38328057DA7000558AD /* AppDelegate.swift */; };
 		56B4E7542BA0DA7800851206 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E7522BA0DA6D00851206 /* TestingAppDelegate.swift */; };
 		56B4E7572BA1003B00851206 /* CurrencySuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */; };
+		56B4E7682BA4F00600851206 /* BackedCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 56B4E7672BA4F00600851206 /* BackedCodable */; };
+		56B4E76B2BA4F0E100851206 /* CurrencyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E76A2BA4F0E100851206 /* CurrencyDTO.swift */; };
 		56B5C38428057DA7000558AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C38328057DA7000558AD /* AppDelegate.swift */; };
 		56B5C38628057DA7000558AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C38528057DA7000558AD /* SceneDelegate.swift */; };
 		56B5C38E28057DA7000558AD /* CryptoMarketTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C38C28057DA7000558AD /* CryptoMarketTest.xcdatamodeld */; };
@@ -176,12 +178,13 @@
 		56B4E6C22B9E4A0A00851206 /* CryptoMarketTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketTestCase.swift; sourceTree = "<group>"; };
 		56B4E6C62B9E53A800851206 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		56B4E6C82B9E541D00851206 /* DataStorageImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageImplementation.swift; sourceTree = "<group>"; };
-		56B4E6CB2B9E668600851206 /* CurrencyDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataAccessObject.swift; sourceTree = "<group>"; };
-		56B4E6CE2B9E66D600851206 /* DefaultDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataAccessObject.swift; sourceTree = "<group>"; };
-		56B4E6D02B9E680500851206 /* CoreDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccessObject.swift; sourceTree = "<group>"; };
+		56B4E6CB2B9E668600851206 /* CurrencyDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDAO.swift; sourceTree = "<group>"; };
+		56B4E6CE2B9E66D600851206 /* BaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
+		56B4E6D02B9E680500851206 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		56B4E74E2BA0D7D100851206 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		56B4E7522BA0DA6D00851206 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencySuccessResponse.json; sourceTree = "<group>"; };
+		56B4E76A2BA4F0E100851206 /* CurrencyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDTO.swift; sourceTree = "<group>"; };
 		56B5C38028057DA7000558AD /* CryptoMarketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B5C38328057DA7000558AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56B5C38528057DA7000558AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56A97732280DE37200ACBDCB /* MagicalRecord.framework in Frameworks */,
+				56B4E7682BA4F00600851206 /* BackedCodable in Frameworks */,
 				56A976F5280DDF1A00ACBDCB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +325,7 @@
 		56B4E6CA2B9E662C00851206 /* DataAccessObjects */ = {
 			isa = PBXGroup;
 			children = (
-				56B4E6CB2B9E668600851206 /* CurrencyDataAccessObject.swift */,
+				56B4E6CB2B9E668600851206 /* CurrencyDAO.swift */,
 			);
 			path = DataAccessObjects;
 			sourceTree = "<group>";
@@ -329,8 +333,8 @@
 		56B4E6CD2B9E66AE00851206 /* CoreDataWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				56B4E6CE2B9E66D600851206 /* DefaultDataAccessObject.swift */,
-				56B4E6D02B9E680500851206 /* CoreDataAccessObject.swift */,
+				56B4E6CE2B9E66D600851206 /* BaseDAO.swift */,
+				56B4E6D02B9E680500851206 /* CoreDataDAO.swift */,
 			);
 			path = CoreDataWrapper;
 			sourceTree = "<group>";
@@ -341,6 +345,14 @@
 				56B4E7522BA0DA6D00851206 /* TestingAppDelegate.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		56B4E7692BA4F0CD00851206 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				56B4E76A2BA4F0E100851206 /* CurrencyDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		56B5C37728057DA7000558AD = {
@@ -468,6 +480,7 @@
 		56B5C3C128058033000558AD /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				56B4E7692BA4F0CD00851206 /* DTOs */,
 				56B4E6CD2B9E66AE00851206 /* CoreDataWrapper */,
 				56B4E6CA2B9E662C00851206 /* DataAccessObjects */,
 				56B5C3C328058177000558AD /* Currency+CoreDataClass.swift */,
@@ -565,6 +578,7 @@
 			name = CryptoMarketTest;
 			packageProductDependencies = (
 				56A976F4280DDF1A00ACBDCB /* Alamofire */,
+				56B4E7672BA4F00600851206 /* BackedCodable */,
 			);
 			productName = CryptoMarketTest;
 			productReference = 56B5C38028057DA7000558AD /* CryptoMarketTest.app */;
@@ -600,6 +614,7 @@
 			mainGroup = 56B5C37728057DA7000558AD;
 			packageReferences = (
 				56A976F3280DDF1A00ACBDCB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				56B4E7662BA4F00600851206 /* XCRemoteSwiftPackageReference "BackedCodable" */,
 			);
 			productRefGroup = 56B5C38128057DA7000558AD /* Products */;
 			projectDirPath = "";
@@ -755,12 +770,13 @@
 				56B5C3C528058178000558AD /* Currency+CoreDataClass.swift in Sources */,
 				56B5C3B928057FFD000558AD /* CurrencyDetailViewController.swift in Sources */,
 				56B5C3BD28057FFD000558AD /* SearchCurrenciesResultsController.swift in Sources */,
-				56B4E6D12B9E680500851206 /* CoreDataAccessObject.swift in Sources */,
+				56B4E6D12B9E680500851206 /* CoreDataDAO.swift in Sources */,
+				56B4E76B2BA4F0E100851206 /* CurrencyDTO.swift in Sources */,
 				56B5C3BA28057FFD000558AD /* DetailTableViewCell.swift in Sources */,
 				56B4E6AF2B9D8FB900851206 /* DatabaseService.swift in Sources */,
-				56B4E6CC2B9E668600851206 /* CurrencyDataAccessObject.swift in Sources */,
+				56B4E6CC2B9E668600851206 /* CurrencyDAO.swift in Sources */,
 				56B5C3AB28057FE9000558AD /* ListingLatest.swift in Sources */,
-				56B4E6CF2B9E66D600851206 /* DefaultDataAccessObject.swift in Sources */,
+				56B4E6CF2B9E66D600851206 /* BaseDAO.swift in Sources */,
 				56B4E74F2BA0D7D100851206 /* main.swift in Sources */,
 				56B4E6B12B9D8FF200851206 /* DatabaseServiceImplementation.swift in Sources */,
 				56B5C3A228057FDD000558AD /* CMTableViewCellDataModel.swift in Sources */,
@@ -1050,6 +1066,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		56B4E7662BA4F00600851206 /* XCRemoteSwiftPackageReference "BackedCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jegnux/BackedCodable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1057,6 +1081,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 56A976F3280DDF1A00ACBDCB /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		56B4E7672BA4F00600851206 /* BackedCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56B4E7662BA4F00600851206 /* XCRemoteSwiftPackageReference "BackedCodable" */;
+			productName = BackedCodable;
 		};
 /* End XCSwiftPackageProductDependency section */
 
