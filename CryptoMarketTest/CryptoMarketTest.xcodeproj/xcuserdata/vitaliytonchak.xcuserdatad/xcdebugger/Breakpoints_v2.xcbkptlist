@@ -96,7 +96,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3CD1974A-6E75-488C-9A9D-333C48CDFF74"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CryptoMarketTestTests/CurrenciesList/CurrenciesListViewModelTests.swift"

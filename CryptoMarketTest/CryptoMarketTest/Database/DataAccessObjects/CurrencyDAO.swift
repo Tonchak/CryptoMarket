@@ -1,13 +1,13 @@
 import Foundation
 import CoreData
 
-protocol CurrencyDataAccessObjectProtocol: CoreDataAccessObject<Currency> {
+protocol QueryDAO: CoreDataDAO<Currency> {
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency]
     func getCurrencies() throws -> [Currency]
 }
 
-final class CurrencyDataAccessObject: CoreDataAccessObject<Currency>, CurrencyDataAccessObjectProtocol {
+final class CurrencyDAO: CoreDataDAO<Currency>, QueryDAO {
     
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency] {
@@ -36,7 +36,7 @@ final class CurrencyDataAccessObject: CoreDataAccessObject<Currency>, CurrencyDa
     }
 }
 
-extension CurrencyDataAccessObject {
+extension CurrencyDAO {
     internal func addCurrency(from rawData: ListingLatest, to moc: NSManagedObjectContext) -> Currency {
         let currency = Currency(context: moc)
         currency.identifier = Int16(rawData.id)

@@ -8,6 +8,15 @@
         "revision" : "59037bfd28aa963a7916f1eb22a74107a3522f16",
         "version" : "5.0.5"
       }
+    },
+    {
+      "identity" : "backedcodable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jegnux/BackedCodable",
+      "state" : {
+        "revision" : "c28a4e556298bd81ba068f0f1c534af73ffd46f9",
+        "version" : "0.1.1"
+      }
     }
   ],
   "version" : 2

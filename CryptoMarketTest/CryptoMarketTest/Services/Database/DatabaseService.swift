@@ -8,6 +8,6 @@ protocol DatabaseService: Actor, Sendable {
 
 extension DatabaseService {
     func fetchCurrenciesList() async throws -> CurrencyResponse {
-        throw DatabaseError.readingError("--")
+        throw CoreDataError.readingError("--")
     }
 }

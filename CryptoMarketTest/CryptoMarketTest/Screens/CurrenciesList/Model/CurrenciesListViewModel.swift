@@ -5,10 +5,10 @@ import MagicalRecord
 final class CurrenciesListViewModel {
     
     private let service: DatabaseService?
-    var currencyDAO: CurrencyDataAccessObjectProtocol
+    var currencyDAO: QueryDAO
     
     init(service: DatabaseService? = DatabaseServiceImplementation(),
-         currencyDAO: CurrencyDataAccessObjectProtocol = CurrencyDataAccessObject()) {
+         currencyDAO: QueryDAO = CurrencyDAO()) {
         self.service = service
         self.currencyDAO = currencyDAO
     }

@@ -1,17 +1,19 @@
 import Foundation
 import CoreData
 
-protocol DefaultDataAccessObject {
+protocol BaseDAO {
     associatedtype T
-    var storage: DataStorage { get }
-    init(storage: DataStorage)
+    associatedtype Storage
+    
+    var storage: Storage { get }
+    init(storage: Storage)
     
     func deleteAllEntities() async throws
     func deleteAllEntities(in context: NSManagedObjectContext) throws
     func getEntities() throws -> [T]
 }
 
-extension DefaultDataAccessObject {
+extension BaseDAO {
     func deleteAllEntities() async throws {}
     func deleteAllEntities(in context: NSManagedObjectContext) throws {}
     func getEntities() throws -> [T] {[]}
