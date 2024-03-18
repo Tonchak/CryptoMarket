@@ -1,28 +1,35 @@
 import Foundation
 import CoreData
 
-final class DataStorageImplementation: DataStorage {
+struct CoreDataStorage: Storage {
     
-    static let shared = DataStorageImplementation()
+    typealias PersistantContainer = NSPersistentContainer
+    typealias ManagedContext = NSManagedObjectContext
     
-    private let persistentContainer: NSPersistentContainer
+    static let shared = CoreDataStorage()
+    
+    let persistentContainer: NSPersistentContainer
+    
     var mainContext: NSManagedObjectContext {
         return self.persistentContainer.viewContext
+    }
+    var taskContext: NSManagedObjectContext {
+        let context = self.persistentContainer.newBackgroundContext()
+        context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        context.undoManager = nil
+        return context
     }
     
     init(isInMemoryStore: Bool = false) {
         persistentContainer = NSPersistentContainer(name: "CryptoMarketTest")
-        
         if isInMemoryStore {
             persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
-        
         persistentContainer.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
-        
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
     

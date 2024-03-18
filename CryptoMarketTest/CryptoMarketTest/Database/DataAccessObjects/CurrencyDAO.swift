@@ -1,13 +1,13 @@
 import Foundation
 import CoreData
 
-protocol QueryDAO: CoreDataDAO<Currency> {
+protocol QueryDAO {
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency]
     func getCurrencies() throws -> [Currency]
 }
 
-final class CurrencyDAO: CoreDataDAO<Currency>, QueryDAO {
+final class CurrencyDAO: CoreDataDAO<CurrencyDTO, Currency>, QueryDAO {
     
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency] {
