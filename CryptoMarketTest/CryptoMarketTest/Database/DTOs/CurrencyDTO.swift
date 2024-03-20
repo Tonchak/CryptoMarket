@@ -3,29 +3,29 @@ import BackedCodable
 
 struct CurrencyDTO: BackedDecodable, Identifiable, Hashable, CoreDataStorable, Comparable {
     
-    init(_: BackedCodable.DeferredDecoder) {
-    }
-    
     var id: String = UUID().uuidString
     
-    @Backed var name: String?
-    @Backed var fullyDilutedMarketCap: Double
-    @Backed var identifier: Int16
-    @Backed var lastUpdated: String
-    @Backed var maxSupply: String
-    @Backed var percentChange1h: Double
-    @Backed var percentChange7d: Double
-    @Backed var percentChange24h: Double
-    @Backed var price: Double
-    @Backed var slug: String
-    @Backed var symbol: String
-    @Backed var totalSupply: Double
+    init(_: DeferredDecoder) {
+    }
+    
+    @Backed() var name: String?
+    @Backed() var fullyDilutedMarketCap: Double
+    @Backed() var identifier: Int16
+    @Backed() var lastUpdated: String
+    @Backed() var maxSupply: String
+    @Backed() var percentChange1h: Double
+    @Backed() var percentChange7d: Double
+    @Backed() var percentChange24h: Double
+    @Backed() var price: Double
+    @Backed() var slug: String
+    @Backed() var symbol: String
+    @Backed() var totalSupply: Double
     
     private enum CodingKeys: String, CodingKey {
         case id
     }
     
-    init(id: String, name: String, fullyDilutedMarketCap: Double, identifier: Int16, lastUpdated: String, maxSupply: String, percentChange1h: Double, percentChange7d: Double, percentChange24h: Double, price: Double, slug: String, symbol: String, totalSupply: Double) {
+    init(id: String, name: String? = nil, fullyDilutedMarketCap: Double, identifier: Int16, lastUpdated: String, maxSupply: String, percentChange1h: Double, percentChange7d: Double, percentChange24h: Double, price: Double, slug: String, symbol: String, totalSupply: Double) {
         self.id = id
         self.$name = name
         self.$fullyDilutedMarketCap = fullyDilutedMarketCap

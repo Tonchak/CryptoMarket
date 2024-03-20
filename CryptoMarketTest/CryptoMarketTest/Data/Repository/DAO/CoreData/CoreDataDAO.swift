@@ -6,11 +6,11 @@ protocol CoreDataStorable {
 }
 
 class CoreDataDAO<Entity: CoreDataStorable, T: NSManagedObject>: BaseDAO {
-    typealias Storage = DataStorage
+    typealias Storage = CoreDataStorage
     
     var storage: Storage
     
-    required init(storage: Storage = DataStorageImplementation.shared) {
+    required init(storage: Storage = CoreDataStorage.shared) {
         self.storage = storage
     }
     

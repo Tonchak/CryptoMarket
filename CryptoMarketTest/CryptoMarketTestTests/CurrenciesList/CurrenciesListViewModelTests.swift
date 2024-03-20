@@ -3,14 +3,14 @@ import XCTest
 
 final class CurrenciesListViewModelTests: CryptoMarketTestCase {
     
-    var storage: DataStorage!
+    var storage: CoreDataStorage!
     var sut: CurrenciesListViewModel!
     var service: DatabaseServiceMock!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        storage = DataStorageImplementation(isInMemoryStore: false)
+        storage = CoreDataStorage(isInMemoryStore: false)
         service = DatabaseServiceMock()
         sut = CurrenciesListViewModel(service: service)
     }
