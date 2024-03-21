@@ -319,10 +319,10 @@
 		562F10B82BAB7CBF00BAFDDC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				562F10B12BAA4AE300BAFDDC /* CurrencyService.swift */,
-				562F10B92BAB7D3100BAFDDC /* ServiceLayer.swift */,
 				562F10BB2BAB7E2100BAFDDC /* Router.swift */,
+				562F10B92BAB7D3100BAFDDC /* ServiceLayer.swift */,
 				562F10BD2BAB839000BAFDDC /* CMRequestError.swift */,
+				562F10B12BAA4AE300BAFDDC /* CurrencyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
