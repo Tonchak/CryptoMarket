@@ -22,7 +22,7 @@ struct CurrencyDTO: BackedDecodable, Identifiable, Hashable, CoreDataStorable, C
     @Backed() var self_reported_market_cap: Double?
     @Backed() var tvl_ratio: Double?
     @Backed() var last_updated: String?
-    //@Backed() var quote: Quote?
+    @Backed(Path("quote", "USD")) var quote: QuoteDTO
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -35,5 +35,42 @@ struct CurrencyDTO: BackedDecodable, Identifiable, Hashable, CoreDataStorable, C
 }
 
 extension CurrencyDTO {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(quote)
+    }
+}
+
+struct QuoteDTO: Codable, Hashable {
+    let price: Double?
+    let volume_24h: Double?
+    let volume_change_24h: Double?
+    let percent_change_1h: Double?
+    let percent_change_24h: Double?
+    let percent_change_7d: Double?
+    let percent_change_30d: Double?
+    let percent_change_60d: Double?
+    let percent_change_90d: Double?
+    let market_cap: Double?
+    let market_cap_dominance: Double?
+    let fully_diluted_market_cap: Double?
+    let tvl: Double?
+    let last_updated: String?
     
+    enum CodingKeys: String, CodingKey {
+        case price
+        case volume_24h
+        case volume_change_24h
+        case percent_change_1h
+        case percent_change_24h
+        case percent_change_7d
+        case percent_change_30d
+        case percent_change_60d
+        case percent_change_90d
+        case market_cap
+        case market_cap_dominance
+        case fully_diluted_market_cap
+        case tvl
+        case last_updated
+    }
 }

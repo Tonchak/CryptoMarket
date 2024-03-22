@@ -21,15 +21,6 @@ enum CMRouter: Equatable {
         }
     }
     
-    var parameters: [URLQueryItem]? {
-        switch self {
-        case .listingLatest:
-            return [
-                URLQueryItem(name: "X-CMC_PRO_API_KEY", value: API.privateKey)
-            ]
-        }
-    }
-    
     var headers: [String : String]? {
         switch self {
         case .listingLatest:
