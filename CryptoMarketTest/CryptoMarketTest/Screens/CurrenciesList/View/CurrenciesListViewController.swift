@@ -57,6 +57,10 @@ final class CurrenciesListViewController: UITableViewController, NSFetchedResult
             }
         }
         viewModel.fetchData()
+        
+        viewModel.result.bind { [weak self] list in
+            print(list as Any)
+        }
     }
     
     var isSearchBarEmpty: Bool {

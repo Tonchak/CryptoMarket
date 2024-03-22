@@ -9,6 +9,8 @@ final class CurrenciesListViewModel {
     
     private var repository: CurrencyRepository
     
+    var result: Box<[CurrencyDTO]?> = Box(nil)
+    
     init(service: DatabaseService? = DatabaseServiceImplementation(),
          currencyDAO: QueryDAO = CurrencyDAO(),
          repository: CurrencyRepository = DependencyInjector.getCurrencyRepositiry()) {
@@ -39,8 +41,8 @@ final class CurrenciesListViewModel {
     
     @MainActor internal func _retrieveList() async {
         do {
-            let result = try await repository.getCurrencies()
-            print(result)
+            let newResult = try await repository.getCurrencies()
+            result.value = newResult
         } catch {
             print(error.localizedDescription)
         }
