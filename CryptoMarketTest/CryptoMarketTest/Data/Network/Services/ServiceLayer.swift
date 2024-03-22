@@ -10,17 +10,17 @@ extension HTTPClient {
         responseModel: T.Type
     ) async throws -> T {
         
-        var request = URLComponents(string: endpoint.url)!
-        
-        if let parameters = endpoint.parameters {
-            request.queryItems = parameters
-        }
+        let request = URLComponents(string: endpoint.url)!
         
         guard let url = request.url else { throw CMRequestError.invalidURL }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.httpMethod = endpoint.method
+        
+        if let headers = endpoint.headers {
+            urlRequest.allHTTPHeaderFields = headers
+        }
         
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest, delegate: nil)

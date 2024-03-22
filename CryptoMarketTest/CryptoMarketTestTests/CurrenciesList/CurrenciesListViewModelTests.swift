@@ -23,11 +23,11 @@ final class CurrenciesListViewModelTests: CryptoMarketTestCase {
         sut = nil
     }
     
-    func testFetchingData() throws {
+    func testFetchingData() async throws {
         sut.fetchData()
         waitTask()
         
-        let list = try sut.getList()
+        let list = try await sut.getList()
         waitTask()
         
         print(list)

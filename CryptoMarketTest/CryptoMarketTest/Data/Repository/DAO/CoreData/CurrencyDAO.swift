@@ -4,7 +4,7 @@ import CoreData
 protocol QueryDAO {
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency]
-    func getCurrencies() throws -> [Currency]
+    func getCurrencies() async throws -> [Currency]
 }
 
 final class CurrencyDAO: CoreDataDAO<CurrencyDTO, Currency>, QueryDAO {
@@ -31,7 +31,7 @@ final class CurrencyDAO: CoreDataDAO<CurrencyDTO, Currency>, QueryDAO {
         }
     }
     
-    func getCurrencies() throws -> [Currency] {
+    func getCurrencies() async throws -> [Currency] {
         try self.getEntities()
     }
 }
