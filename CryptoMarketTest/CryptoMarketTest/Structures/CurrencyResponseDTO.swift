@@ -5,6 +5,5 @@ struct CurrencyResponseDTO: BackedDecodable {
     
     init(_: DeferredDecoder) {}
     
-    @Backed(Path("data", "results"))
-    var currencies: [CurrencyDTO]
+    @Backed(Path("data")) var currencies: [CurrencyDTO]
 }

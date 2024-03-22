@@ -7,15 +7,20 @@ final class CurrenciesListViewModel {
     private let service: DatabaseService?
     var currencyDAO: QueryDAO
     
+    private var repository: CurrencyRepository
+    
     init(service: DatabaseService? = DatabaseServiceImplementation(),
-         currencyDAO: QueryDAO = CurrencyDAO()) {
+         currencyDAO: QueryDAO = CurrencyDAO(),
+         repository: CurrencyRepository = DependencyInjector.getCurrencyRepositiry()) {
         self.service = service
         self.currencyDAO = currencyDAO
+        self.repository = repository
     }
     
     func fetchData() {
         Task {
-            await _fetchData()
+            //await _fetchData()
+            await _retrieveList()
         }
     }
     
@@ -32,8 +37,17 @@ final class CurrenciesListViewModel {
         }
     }
     
-    func getList() throws -> [Currency] {
-        try currencyDAO.getCurrencies()
+    @MainActor internal func _retrieveList() async {
+        do {
+            let result = try await repository.getCurrencies()
+            print(result)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getList() async throws -> [Currency] {
+        try await currencyDAO.getCurrencies()
     }
 }
 

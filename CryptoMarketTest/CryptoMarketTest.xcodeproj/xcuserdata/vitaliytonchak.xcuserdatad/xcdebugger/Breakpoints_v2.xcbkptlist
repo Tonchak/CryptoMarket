@@ -17,84 +17,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30D05322-1E6E-4E6D-BFF3-87DCB8A06023"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CryptoMarketTest/SupportinFiles/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "30D05322-1E6E-4E6D-BFF3-87DCB8A06023 - 4792a825af8f2198"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CryptoMarketTest.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "CryptoMarketTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/SupportinFiles/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "30D05322-1E6E-4E6D-BFF3-87DCB8A06023 - 30b908e073a8a8dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CryptoMarketTestTests.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "CryptoMarketTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/SupportinFiles/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "30D05322-1E6E-4E6D-BFF3-87DCB8A06023 - 4792a825af8f21f9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CryptoMarketTest.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "CryptoMarketTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/SupportinFiles/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "42">
-               </Location>
-               <Location
-                  uuid = "30D05322-1E6E-4E6D-BFF3-87DCB8A06023 - 30b908e073a8a8bd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CryptoMarketTestTests.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "CryptoMarketTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/SupportinFiles/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "42">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3CD1974A-6E75-488C-9A9D-333C48CDFF74"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -105,6 +27,149 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "testFetchingData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3CD1974A-6E75-488C-9A9D-333C48CDFF74 - 2f0e7cfe5bfe12ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CryptoMarketTestTests.CurrenciesListViewModelTests.testFetchingData() throws -&gt; ()"
+                  moduleName = "CryptoMarketTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTestTests/CurrenciesList/CurrenciesListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "606">
+               </Location>
+               <Location
+                  uuid = "3CD1974A-6E75-488C-9A9D-333C48CDFF74 - 99ec9093ced6b8a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarketTestTests.CurrenciesListViewModelTests.testFetchingData() async throws -&gt; ()"
+                  moduleName = "CryptoMarketTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTestTests/CurrenciesList/CurrenciesListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0C97408-50CE-4E52-90D7-E8D6D01FECC5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarketTest/Screens/CurrenciesList/Model/CurrenciesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "_retrieveList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE99B96D-6E77-4051-BC75-4EACC2311C22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarketTest/Screens/CurrenciesList/Model/CurrenciesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "_retrieveList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3800A44A-5324-4179-B33D-C7E59E2B53B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarketTest/Data/Network/Services/ServiceLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "executeRequest(endpoint:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3800A44A-5324-4179-B33D-C7E59E2B53B8 - e9204796bc13e48a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarketTest.HTTPClient.executeRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: CryptoMarketTest.CMRouter, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "CryptoMarketTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/Data/Network/Services/ServiceLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2518">
+               </Location>
+               <Location
+                  uuid = "3800A44A-5324-4179-B33D-C7E59E2B53B8 - e9204796bc13e40e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarketTest.HTTPClient.executeRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: CryptoMarketTest.CMRouter, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "CryptoMarketTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/Data/Network/Services/ServiceLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "2518">
+               </Location>
+               <Location
+                  uuid = "3800A44A-5324-4179-B33D-C7E59E2B53B8 - e9204796bc13e48a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarketTest.HTTPClient.executeRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: CryptoMarketTest.CMRouter, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "CryptoMarketTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vitaliytonchak/Neurons/CryptoMarket/CryptoMarketTest/CryptoMarketTest/Data/Network/Services/ServiceLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "967045D0-C99A-43CE-94BE-6B8E15A3D12E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarketTest/Data/Network/Services/ServiceLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "executeRequest(endpoint:responseModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
