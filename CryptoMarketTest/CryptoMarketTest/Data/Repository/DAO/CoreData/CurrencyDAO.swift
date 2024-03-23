@@ -5,6 +5,7 @@ protocol QueryDAO {
     @discardableResult
     func addCurrencies(_ data: [ListingLatest]) async throws -> [Currency]
     func getCurrencies() async throws -> [Currency]
+    func addReplacing(_ entity: CurrencyDTO) async -> CurrencyDTO
 }
 
 final class CurrencyDAO: CoreDataDAO<CurrencyDTO, Currency>, QueryDAO {

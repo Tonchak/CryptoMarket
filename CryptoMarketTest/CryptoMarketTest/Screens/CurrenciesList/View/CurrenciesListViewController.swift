@@ -1,6 +1,5 @@
 import UIKit
 import CoreData
-import MagicalRecord
 
 final class CurrenciesListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     

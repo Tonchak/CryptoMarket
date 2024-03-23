@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 protocol BaseDAO {
-    associatedtype T
+    associatedtype Entity
     associatedtype Storage
     
     var storage: Storage { get }
@@ -10,11 +10,12 @@ protocol BaseDAO {
     
     func deleteAllEntities() async throws
     func deleteAllEntities(in context: NSManagedObjectContext) throws
-    func getEntities() throws -> [T]
+    func getEntities() async throws -> [Entity]
+    func addReplacing(_ entity: Entity) async -> Entity
 }
 
 extension BaseDAO {
     func deleteAllEntities() async throws {}
     func deleteAllEntities(in context: NSManagedObjectContext) throws {}
-    func getEntities() throws -> [T] {[]}
+    func getEntities() throws -> [Entity] {[]}
 }
