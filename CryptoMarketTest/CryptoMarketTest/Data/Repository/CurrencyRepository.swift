@@ -13,10 +13,13 @@ class CurrencyRepository: Repository {
     }
     
     func getCurrencies() async throws -> [CurrencyDTO] {
-        let cached = try await self.dao.getCurrencies()
+        let cachedCurrencies = try await self.dao.getCurrencies()
         
-        guard !cached.isEmpty else {
+        guard !cachedCurrencies.isEmpty else {
             let newCurrencies = try await self.service.getCurrencies().currencies
+            for currency in newCurrencies {
+                //_ = await dao.addReplacing(currency)
+            }
             
             return newCurrencies
         }
