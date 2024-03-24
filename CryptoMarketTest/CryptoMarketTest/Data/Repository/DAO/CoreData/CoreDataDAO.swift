@@ -41,6 +41,21 @@ class CoreDataDAO<Entity: CoreDataStorable, T: NSManagedObject>: BaseDAO {
         }
     }
     
+    func getCurrencies() async throws -> [Entity] {
+        let backgroundContext = storage.taskContext
+        var result: [Entity]!
+        try await backgroundContext.perform {
+            do {
+                result = try backgroundContext.fetch(self.generateArrayRequest()).map {
+                    self.decode(object: $0)
+                }
+            } catch {
+                throw CoreDataError.readingError("Data Could Not Be Read")
+            }
+        }
+        return result
+    }
+    
     func addReplacing(_ entity: Entity) async -> Entity {
         let backgroundContext = self.storage.taskContext
         var updatedEntity: Entity!

@@ -48,7 +48,7 @@ final class CurrenciesListViewModel {
         }
     }
     
-    func getList() async throws -> [Currency] {
+    func getList() async throws -> [CurrencyDTO] {
         try await currencyDAO.getCurrencies()
     }
 }
