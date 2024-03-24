@@ -18,6 +18,7 @@
 		562F10C32BACE4E000BAFDDC /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F10C22BACE4E000BAFDDC /* DependencyInjector.swift */; };
 		562F10C52BACEB5900BAFDDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F10C42BACEB5900BAFDDC /* SceneDelegate.swift */; };
 		56333CF42BAE00C6007363DF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56333CF32BAE00C6007363DF /* Box.swift */; };
+		56333CF72BAF8B26007363DF /* CMMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56333CF62BAF8B26007363DF /* CMMapper.swift */; };
 		56521C17280EDF3400AB8CA4 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C39D28057FC6000558AD /* DatabaseHandler.swift */; };
 		56521C18280EDF6900AB8CA4 /* MarketAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C39C28057FC6000558AD /* MarketAPIManager.swift */; };
 		56521C19280EDF6E00AB8CA4 /* ListingLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3A728057FE9000558AD /* ListingLatest.swift */; };
@@ -188,6 +189,7 @@
 		562F10C22BACE4E000BAFDDC /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		562F10C42BACEB5900BAFDDC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56333CF32BAE00C6007363DF /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		56333CF62BAF8B26007363DF /* CMMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMMapper.swift; sourceTree = "<group>"; };
 		56521BFE280ED5D000AB8CA4 /* CryptoMarketTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMarketTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = Vendor/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
 		56B4E6AE2B9D8FB900851206 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		562F10B62BAB6E4D00BAFDDC /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				56333CF52BAF8B12007363DF /* Mapping */,
 				56B4E6C62B9E53A800851206 /* Storage.swift */,
 				562F10B72BAB6E8A00BAFDDC /* CoreData */,
 			);
@@ -347,6 +350,14 @@
 				56333CF32BAE00C6007363DF /* Box.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		56333CF52BAF8B12007363DF /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				56333CF62BAF8B26007363DF /* CMMapper.swift */,
+			);
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 		56521BFF280ED5D000AB8CA4 /* CryptoMarketTestTests */ = {
@@ -891,6 +902,7 @@
 				56333CF42BAE00C6007363DF /* Box.swift in Sources */,
 				56B5C3C428058178000558AD /* Currency+CoreDataProperties.swift in Sources */,
 				562F10BA2BAB7D3100BAFDDC /* ServiceLayer.swift in Sources */,
+				56333CF72BAF8B26007363DF /* CMMapper.swift in Sources */,
 				56B4E6C72B9E53A800851206 /* Storage.swift in Sources */,
 				562F10C52BACEB5900BAFDDC /* SceneDelegate.swift in Sources */,
 				56B5C3C028057FFD000558AD /* CurrenciesListViewController.swift in Sources */,

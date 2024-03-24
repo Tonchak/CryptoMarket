@@ -18,7 +18,7 @@ class CurrencyRepository: Repository {
         guard !cachedCurrencies.isEmpty else {
             let newCurrencies = try await self.service.getCurrencies().currencies
             for currency in newCurrencies {
-                //_ = await dao.addReplacing(currency)
+                _ = await dao.addReplacing(currency)
             }
             
             return newCurrencies
