@@ -9,9 +9,8 @@ final actor DatabaseServiceMock: DatabaseService {
             throw CryptoMarketTest.NetworkError.badCodeFromResponse(code: 1001)
         }
         
-        let decoder = JSONDecoder()
         do {
-            let response = try decoder.decode(CryptoMarketTest.CurrencyResponse.self, from: json)
+            let response = try JSONDecoder().decode(CryptoMarketTest.CurrencyResponse.self, from: json)
             return response
         } catch {
             return CryptoMarketTest.CurrencyResponse.init(status: nil)

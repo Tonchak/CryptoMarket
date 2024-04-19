@@ -16,11 +16,11 @@ final class CurrenciesListViewModelTests: CryptoMarketTestCase {
     }
 
     override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        
         storage = nil
         service = nil
         sut = nil
+        
+        try super.tearDownWithError()
     }
     
     func testFetchingData() async throws {
