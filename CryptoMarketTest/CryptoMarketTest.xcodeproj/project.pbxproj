@@ -363,12 +363,53 @@
 		56521BFF280ED5D000AB8CA4 /* CryptoMarketTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				56B4E7552BA0E34100851206 /* SupportingFiles */,
+				5675F5BB2BD2AF3100C0793D /* Resources */,
+				56A144D02BB9F39E000582B7 /* Cases */,
 				56B4E6B72B9E3B2B00851206 /* Mocks */,
-				56B4E6B32B9E1EA700851206 /* CurrenciesList */,
-				56B4E6C22B9E4A0A00851206 /* CryptoMarketTestCase.swift */,
+				56A144D32BB9F40F000582B7 /* Helper Classes */,
+				56B4E7552BA0E34100851206 /* SupportingFiles */,
 			);
 			path = CryptoMarketTestTests;
+			sourceTree = "<group>";
+		};
+		5675F5BB2BD2AF3100C0793D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		56A144D02BB9F39E000582B7 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				56A144D12BB9F3CB000582B7 /* App Model */,
+				56A144D22BB9F3D2000582B7 /* UI Layer */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		56A144D12BB9F3CB000582B7 /* App Model */ = {
+			isa = PBXGroup;
+			children = (
+				56B4E6B52B9E1FF900851206 /* CurrenciesListViewModelTests.swift */,
+			);
+			path = "App Model";
+			sourceTree = "<group>";
+		};
+		56A144D22BB9F3D2000582B7 /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		56A144D32BB9F40F000582B7 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				56B4E6C22B9E4A0A00851206 /* CryptoMarketTestCase.swift */,
+			);
+			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
 		56A9770C280DE35F00ACBDCB /* Products */ = {
@@ -406,14 +447,6 @@
 				56B5C3B528057FFD000558AD /* TableView Cells */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		56B4E6B32B9E1EA700851206 /* CurrenciesList */ = {
-			isa = PBXGroup;
-			children = (
-				56B4E6B52B9E1FF900851206 /* CurrenciesListViewModelTests.swift */,
-			);
-			path = CurrenciesList;
 			sourceTree = "<group>";
 		};
 		56B4E6B72B9E3B2B00851206 /* Mocks */ = {
@@ -467,7 +500,6 @@
 		56B5C37728057DA7000558AD = {
 			isa = PBXGroup;
 			children = (
-				56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */,
 				56B4E6B42B9E1F3C00851206 /* CryptoMarket.xctestplan */,
 				56B5C38228057DA7000558AD /* CryptoMarketTest */,
 				56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */,
