@@ -3,7 +3,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var currentAppDelegate: AppDelegate?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -12,9 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = sceneWindow
         
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CurrenciesListViewController(style: .plain))
-        
-        currentAppDelegate = UIApplication.shared.delegate as? AppDelegate
+        window?.rootViewController = UINavigationController(rootViewController: CurrenciesViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
