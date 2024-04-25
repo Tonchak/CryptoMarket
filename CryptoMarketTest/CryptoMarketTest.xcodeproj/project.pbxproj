@@ -283,21 +283,6 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
-		562F10AB2BAA48A000BAFDDC /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				562F10AC2BAA48AB00BAFDDC /* Usecase */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		562F10AC2BAA48AB00BAFDDC /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Usecase;
-			sourceTree = "<group>";
-		};
 		562F10B52BAB6E1500BAFDDC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,18 +506,18 @@
 		56B5C38228057DA7000558AD /* CryptoMarketTest */ = {
 			isa = PBXGroup;
 			children = (
-				56B5C39428057DA9000558AD /* Info.plist */,
+				56E768DE2BDABF6A00CDC657 /* AppDelegate */,
+				56E768DF2BDABF8200CDC657 /* SceneDelegate */,
 				56B5C39A28057FC6000558AD /* Managers */,
 				56F456A82B9CB3F400A8003A /* Services */,
 				56B4E6C42B9E538000851206 /* Data */,
-				562F10AB2BAA48A000BAFDDC /* Domain */,
 				56B5C3A028057FDD000558AD /* Models */,
 				56B5C3A328057FE9000558AD /* Structures */,
 				56B5C3AC28057FFD000558AD /* Screens */,
 				56B5C3C128058033000558AD /* Database */,
 				562F10C12BACE4C300BAFDDC /* Dependencies */,
-				56F456A62B9CB1AF00A8003A /* SupportinFiles */,
 				56333CF22BAE00AF007363DF /* Utilities */,
+				56F456A62B9CB1AF00A8003A /* SupportinFiles */,
 				56F456A72B9CB1D400A8003A /* Resources */,
 			);
 			path = CryptoMarketTest;
@@ -635,11 +620,25 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		56F456A62B9CB1AF00A8003A /* SupportinFiles */ = {
+		56E768DE2BDABF6A00CDC657 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				56B5C38328057DA7000558AD /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		56E768DF2BDABF8200CDC657 /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				562F10C42BACEB5900BAFDDC /* SceneDelegate.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		56F456A62B9CB1AF00A8003A /* SupportinFiles */ = {
+			isa = PBXGroup;
+			children = (
 				56B4E74E2BA0D7D100851206 /* main.swift */,
 				56B5C39128057DA9000558AD /* LaunchScreen.storyboard */,
 			);
@@ -649,6 +648,7 @@
 		56F456A72B9CB1D400A8003A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				56B5C39428057DA9000558AD /* Info.plist */,
 				56B5C38F28057DA8000558AD /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -1133,7 +1133,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CYCS9B5KF2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoMarketTest/Info.plist;
+				INFOPLIST_FILE = CryptoMarketTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1161,7 +1161,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CYCS9B5KF2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoMarketTest/Info.plist;
+				INFOPLIST_FILE = CryptoMarketTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
