@@ -1,13 +1,12 @@
 import UIKit
 import CoreData
-import MagicalRecord
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    //var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MagicalRecord.setupCoreDataStack(withAutoMigratingSqliteStoreNamed: "CryptoMarketTest")
         return true
     }
 
@@ -26,9 +25,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        MagicalRecord.save({ (context) in
-            context.mr_saveToPersistentStoreAndWait()
-        })
+        
     }
 }
 

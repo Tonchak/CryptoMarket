@@ -26,8 +26,6 @@
 		56521C1B280EDF9700AB8CA4 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3A628057FE9000558AD /* Platform.swift */; };
 		56521C1C280EDFB100AB8CA4 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3C328058177000558AD /* Currency+CoreDataClass.swift */; };
 		56A976F5280DDF1A00ACBDCB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56A976F4280DDF1A00ACBDCB /* Alamofire */; };
-		56A97732280DE37200ACBDCB /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9771B280DE36000ACBDCB /* MagicalRecord.framework */; };
-		56A97733280DE37200ACBDCB /* MagicalRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56A9771B280DE36000ACBDCB /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		56B4E6AF2B9D8FB900851206 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6AE2B9D8FB900851206 /* DatabaseService.swift */; };
 		56B4E6B12B9D8FF200851206 /* DatabaseServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6B02B9D8FF200851206 /* DatabaseServiceImplementation.swift */; };
 		56B4E6B62B9E1FF900851206 /* CurrenciesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6B52B9E1FF900851206 /* CurrenciesListViewModelTests.swift */; };
@@ -39,7 +37,6 @@
 		56B4E6CC2B9E668600851206 /* CurrencyDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CB2B9E668600851206 /* CurrencyDAO.swift */; };
 		56B4E6CF2B9E66D600851206 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6CE2B9E66D600851206 /* BaseDAO.swift */; };
 		56B4E6D12B9E680500851206 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E6D02B9E680500851206 /* CoreDataDAO.swift */; };
-		56B4E74F2BA0D7D100851206 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E74E2BA0D7D100851206 /* main.swift */; };
 		56B4E7502BA0D8DF00851206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C38328057DA7000558AD /* AppDelegate.swift */; };
 		56B4E7542BA0DA7800851206 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4E7522BA0DA6D00851206 /* TestingAppDelegate.swift */; };
 		56B4E7572BA1003B00851206 /* CurrencySuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */; };
@@ -66,6 +63,7 @@
 		56B5C3C028057FFD000558AD /* CurrenciesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3B828057FFD000558AD /* CurrenciesListViewController.swift */; };
 		56B5C3C428058178000558AD /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3C228058177000558AD /* Currency+CoreDataProperties.swift */; };
 		56B5C3C528058178000558AD /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C3C328058177000558AD /* Currency+CoreDataClass.swift */; };
+		56E7690B2BDAF7D400CDC657 /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E7690A2BDAF7D400CDC657 /* CurrenciesViewController.swift */; };
 		56F456AC2B9D15F000A8003A /* CurrenciesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F456AB2B9D15F000A8003A /* CurrenciesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,90 +75,6 @@
 			remoteGlobalIDString = 56B5C37F28057DA7000558AD;
 			remoteInfo = CryptoMarketTest;
 		};
-		56A9771A280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 905D07181A63DE190076B54E;
-			remoteInfo = "MagicalRecord for iOS";
-		};
-		56A9771C280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9004F5211A94CBCF00A61312;
-			remoteInfo = "MagicalRecord for iOS Tests";
-		};
-		56A9771E280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 905D073B1A63DE690076B54E;
-			remoteInfo = "MagicalRecord for OS X";
-		};
-		56A97720280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9004F5661A94CBF900A61312;
-			remoteInfo = "MagicalRecord for OS X Tests";
-		};
-		56A97722280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37CA2607229FEB7000EAB9F6;
-			remoteInfo = "MagicalRecord for tvOS";
-		};
-		56A97724280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37CA260F229FEB7000EAB9F6;
-			remoteInfo = "MagicalRecord for tvOS Tests";
-		};
-		56A97726280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C7CF97AB17498414008D9D13;
-			remoteInfo = "libMagicalRecord for iOS";
-		};
-		56A97728280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C7CF97FF174984CA008D9D13;
-			remoteInfo = "libMagicalRecord for iOS Tests";
-		};
-		56A9772A280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C7CF97BB1749843F008D9D13;
-			remoteInfo = "libMagicalRecord for OS X";
-		};
-		56A9772C280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C7CF9816174984E4008D9D13;
-			remoteInfo = "libMagicalRecord for OS X Tests";
-		};
-		56A9772E280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3790044922BB51880087D3FC;
-			remoteInfo = "libMagicalRecord for tvOS";
-		};
-		56A97730280DE36000ACBDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3790045622BB51DD0087D3FC;
-			remoteInfo = "libMagicalRecord for tvOS Tests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -170,7 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				56A97733280DE37200ACBDCB /* MagicalRecord.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +104,6 @@
 		56333CF32BAE00C6007363DF /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		56333CF62BAF8B26007363DF /* CMMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMMapper.swift; sourceTree = "<group>"; };
 		56521BFE280ED5D000AB8CA4 /* CryptoMarketTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMarketTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = Vendor/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
 		56B4E6AE2B9D8FB900851206 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		56B4E6B02B9D8FF200851206 /* DatabaseServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceImplementation.swift; sourceTree = "<group>"; };
 		56B4E6B42B9E1F3C00851206 /* CryptoMarket.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CryptoMarket.xctestplan; sourceTree = "<group>"; };
@@ -204,7 +116,6 @@
 		56B4E6CB2B9E668600851206 /* CurrencyDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDAO.swift; sourceTree = "<group>"; };
 		56B4E6CE2B9E66D600851206 /* BaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		56B4E6D02B9E680500851206 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
-		56B4E74E2BA0D7D100851206 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		56B4E7522BA0DA6D00851206 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		56B4E7562BA1003B00851206 /* CurrencySuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencySuccessResponse.json; sourceTree = "<group>"; };
 		56B4E76A2BA4F0E100851206 /* CurrencyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDTO.swift; sourceTree = "<group>"; };
@@ -231,6 +142,7 @@
 		56B5C3B828057FFD000558AD /* CurrenciesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesListViewController.swift; sourceTree = "<group>"; };
 		56B5C3C228058177000558AD /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		56B5C3C328058177000558AD /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		56E7690A2BDAF7D400CDC657 /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		56F456AB2B9D15F000A8003A /* CurrenciesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56A97732280DE37200ACBDCB /* MagicalRecord.framework in Frameworks */,
 				56B4E7682BA4F00600851206 /* BackedCodable in Frameworks */,
 				56A976F5280DDF1A00ACBDCB /* Alamofire in Frameworks */,
 			);
@@ -397,25 +308,6 @@
 			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
-		56A9770C280DE35F00ACBDCB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				56A9771B280DE36000ACBDCB /* MagicalRecord.framework */,
-				56A9771D280DE36000ACBDCB /* MagicalRecord for iOS Tests.xctest */,
-				56A9771F280DE36000ACBDCB /* MagicalRecord.framework */,
-				56A97721280DE36000ACBDCB /* MagicalRecord for OS X Tests.xctest */,
-				56A97723280DE36000ACBDCB /* MagicalRecord.framework */,
-				56A97725280DE36000ACBDCB /* MagicalRecord for tvOS Tests.xctest */,
-				56A97727280DE36000ACBDCB /* libMagicalRecord.a */,
-				56A97729280DE36000ACBDCB /* libMagicalRecord for iOS Tests.xctest */,
-				56A9772B280DE36000ACBDCB /* libMagicalRecord.dylib */,
-				56A9772D280DE36000ACBDCB /* libMagicalRecord for OS X Tests.xctest */,
-				56A9772F280DE36000ACBDCB /* libMagicalRecord.a */,
-				56A97731280DE36000ACBDCB /* libMagicalRecord for tvOS Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		56B4E6AD2B9D8F3600851206 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +379,6 @@
 			children = (
 				56B4E6B42B9E1F3C00851206 /* CryptoMarket.xctestplan */,
 				56B5C38228057DA7000558AD /* CryptoMarketTest */,
-				56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */,
 				56521BFF280ED5D000AB8CA4 /* CryptoMarketTestTests */,
 				56B5C38128057DA7000558AD /* Products */,
 				91850390822A83C8AD3FB715 /* Frameworks */,
@@ -508,16 +399,9 @@
 			children = (
 				56E768DE2BDABF6A00CDC657 /* AppDelegate */,
 				56E768DF2BDABF8200CDC657 /* SceneDelegate */,
-				56B5C39A28057FC6000558AD /* Managers */,
-				56F456A82B9CB3F400A8003A /* Services */,
-				56B4E6C42B9E538000851206 /* Data */,
-				56B5C3A028057FDD000558AD /* Models */,
-				56B5C3A328057FE9000558AD /* Structures */,
-				56B5C3AC28057FFD000558AD /* Screens */,
-				56B5C3C128058033000558AD /* Database */,
-				562F10C12BACE4C300BAFDDC /* Dependencies */,
-				56333CF22BAE00AF007363DF /* Utilities */,
+				56E769072BDAF73D00CDC657 /* UI */,
 				56F456A62B9CB1AF00A8003A /* SupportinFiles */,
+				56E769062BDAF70B00CDC657 /* Legacy */,
 				56F456A72B9CB1D400A8003A /* Resources */,
 			);
 			path = CryptoMarketTest;
@@ -620,6 +504,14 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		56D4C4D12BDAFA4100D8DDAF /* CurrenciesList */ = {
+			isa = PBXGroup;
+			children = (
+				56E7690A2BDAF7D400CDC657 /* CurrenciesViewController.swift */,
+			);
+			path = CurrenciesList;
+			sourceTree = "<group>";
+		};
 		56E768DE2BDABF6A00CDC657 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,10 +528,33 @@
 			path = SceneDelegate;
 			sourceTree = "<group>";
 		};
+		56E769062BDAF70B00CDC657 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				56B5C39A28057FC6000558AD /* Managers */,
+				56F456A82B9CB3F400A8003A /* Services */,
+				56B4E6C42B9E538000851206 /* Data */,
+				56B5C3A028057FDD000558AD /* Models */,
+				56B5C3A328057FE9000558AD /* Structures */,
+				56B5C3AC28057FFD000558AD /* Screens */,
+				56B5C3C128058033000558AD /* Database */,
+				562F10C12BACE4C300BAFDDC /* Dependencies */,
+				56333CF22BAE00AF007363DF /* Utilities */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		56E769072BDAF73D00CDC657 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				56D4C4D12BDAFA4100D8DDAF /* CurrenciesList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		56F456A62B9CB1AF00A8003A /* SupportinFiles */ = {
 			isa = PBXGroup;
 			children = (
-				56B4E74E2BA0D7D100851206 /* main.swift */,
 				56B5C39128057DA9000558AD /* LaunchScreen.storyboard */,
 			);
 			path = SupportinFiles;
@@ -763,12 +678,6 @@
 			);
 			productRefGroup = 56B5C38128057DA7000558AD /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 56A9770C280DE35F00ACBDCB /* Products */;
-					ProjectRef = 56A9770B280DE35F00ACBDCB /* MagicalRecord.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				56B5C37F28057DA7000558AD /* CryptoMarketTest */,
@@ -776,93 +685,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		56A9771B280DE36000ACBDCB /* MagicalRecord.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MagicalRecord.framework;
-			remoteRef = 56A9771A280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A9771D280DE36000ACBDCB /* MagicalRecord for iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "MagicalRecord for iOS Tests.xctest";
-			remoteRef = 56A9771C280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A9771F280DE36000ACBDCB /* MagicalRecord.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MagicalRecord.framework;
-			remoteRef = 56A9771E280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97721280DE36000ACBDCB /* MagicalRecord for OS X Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "MagicalRecord for OS X Tests.xctest";
-			remoteRef = 56A97720280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97723280DE36000ACBDCB /* MagicalRecord.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MagicalRecord.framework;
-			remoteRef = 56A97722280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97725280DE36000ACBDCB /* MagicalRecord for tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "MagicalRecord for tvOS Tests.xctest";
-			remoteRef = 56A97724280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97727280DE36000ACBDCB /* libMagicalRecord.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMagicalRecord.a;
-			remoteRef = 56A97726280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97729280DE36000ACBDCB /* libMagicalRecord for iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "libMagicalRecord for iOS Tests.xctest";
-			remoteRef = 56A97728280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A9772B280DE36000ACBDCB /* libMagicalRecord.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libMagicalRecord.dylib;
-			remoteRef = 56A9772A280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A9772D280DE36000ACBDCB /* libMagicalRecord for OS X Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "libMagicalRecord for OS X Tests.xctest";
-			remoteRef = 56A9772C280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A9772F280DE36000ACBDCB /* libMagicalRecord.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMagicalRecord.a;
-			remoteRef = 56A9772E280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		56A97731280DE36000ACBDCB /* libMagicalRecord for tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "libMagicalRecord for tvOS Tests.xctest";
-			remoteRef = 56A97730280DE36000ACBDCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		56521BFC280ED5D000AB8CA4 /* Resources */ = {
@@ -925,8 +747,8 @@
 				562F10BC2BAB7E2100BAFDDC /* Router.swift in Sources */,
 				56B4E6CC2B9E668600851206 /* CurrencyDAO.swift in Sources */,
 				56B5C3AB28057FE9000558AD /* ListingLatest.swift in Sources */,
+				56E7690B2BDAF7D400CDC657 /* CurrenciesViewController.swift in Sources */,
 				56B4E6CF2B9E66D600851206 /* BaseDAO.swift in Sources */,
-				56B4E74F2BA0D7D100851206 /* main.swift in Sources */,
 				56B4E6B12B9D8FF200851206 /* DatabaseServiceImplementation.swift in Sources */,
 				56B5C3A228057FDD000558AD /* CMTableViewCellDataModel.swift in Sources */,
 				56F456AC2B9D15F000A8003A /* CurrenciesListViewModel.swift in Sources */,
